@@ -1,0 +1,45 @@
+
+mat-sidenav-container {
+    position: sticky;
+    height: 100vh;
+    min-height: 100vh;
+
+}
+
+.iconStyle {
+    color: white;
+}
+
+.iconStyleList {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.void {
+    border: none;
+    background: none;
+    padding: 5px;
+    border-radius: 50%;
+    
+}
+
+.listStyle {
+margin-top: 5%;
+}
+
+.example-icon {
+padding: 0 14px;
+}
+
+.example-spacer {
+flex: 1 1 auto;
+}
+
+.align{
+    text-align: center;
+}
+
+.style {
+    text-decoration: none;
+    color: white;
+}

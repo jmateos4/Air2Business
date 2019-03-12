@@ -1,0 +1,23 @@
+
+<mat-toolbar class="main-header" color="primary">
+  <button class="void" (click)="sidenav.toggle()"><mat-icon  class="iconStyle" >menu</mat-icon></button>
+  <div class="branding">
+          <span >Air 2 Bussiness - Admin Panel</span>
+  </div>
+ 
+  <span class="example-spacer"></span>
+  
+  <!-- <button mat-raised-button color="primary" (click)="salir()"><mat-icon class="example-icon">exit_to_app</mat-icon></button>-->
+</mat-toolbar>
+<div class="container">
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #sidenav mode="side" class="menu-lateral">
+    <mat-list class="listFStyle" role="list">
+    </mat-list>
+  </mat-sidenav>
+  <mat-sidenav-content fxLayout="row" fxLayoutAlign="center center" >
+      <router-outlet></router-outlet>
+  </mat-sidenav-content> 
+</mat-sidenav-container>
+
+</div>
