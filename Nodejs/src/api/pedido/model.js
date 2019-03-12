@@ -5,6 +5,9 @@ const pedidoSchema = new Schema({
       type: Schema.ObjectId,
       ref: 'pedido'
   }],
+  estadopedido: {
+    type: String
+  },
   distribuidor: {
       type: Schema.ObjectId,
       ref: 'distribuidor',

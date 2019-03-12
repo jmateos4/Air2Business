@@ -66,6 +66,8 @@ public class LoginActivity extends AppCompatActivity {
                             UtilToken.setToken(LoginActivity.this, response.body().getToken());
                             UtilToken.setIdUser(LoginActivity.this, response.body().getUser().getId());
                             Toast.makeText(LoginActivity.this, "Sesion Buena", Toast.LENGTH_LONG).show();
+                            //startActivity(new Intent(LoginActivity.this, NavigationActivity.class));
+                            //finish();
                         }
                     }
 
