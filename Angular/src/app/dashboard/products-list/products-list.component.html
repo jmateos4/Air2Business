@@ -1,0 +1,62 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <h2>Listado De Productos</h2>
+</div>
+<div class="mat-elevation-z8 ancho" >
+<table mat-table [dataSource]="dataSource" >
+
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef class="center"> ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="nombre">
+    <th mat-header-cell *matHeaderCellDef class="center"> Nombre </th>
+    <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="codReferencia">
+    <th mat-header-cell *matHeaderCellDef class="center"> codReferencia </th>
+    <td mat-cell *matCellDef="let element"> {{element.codReferencia}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="descripcion">
+    <th mat-header-cell *matHeaderCellDef class="center"> Descripcion </th>
+    <td mat-cell *matCellDef="let element"> {{element.descripcion}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="dimensiones">
+    <th mat-header-cell *matHeaderCellDef class="center"> Dimensiones </th>
+    <td mat-cell *matCellDef="let element"> {{element.dimensiones}} </td>
+  </ng-container>
+
+
+<!--
+  <ng-container matColumnDef="category">
+    <th mat-header-cell *matHeaderCellDef class="center"> Role </th>
+    <td mat-cell *matCellDef="let element"> {{element.category.name}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="type">
+    <th mat-header-cell *matHeaderCellDef class="center"> Role </th>
+    <td mat-cell *matCellDef="let element"> {{element.type.name}} </td>
+  </ng-container>
+-->
+
+
+  <ng-container matColumnDef="acciones">
+    <th mat-header-cell *matHeaderCellDef class="center"> Acciones </th>
+    <td mat-cell *matCellDef="let element">
+      <button mat-raised-button class="buttonStyle" color="primary" (click)="openDialogEditProducto(element)"><mat-icon >border_color</mat-icon></button>
+      <button mat-raised-button class="buttonStyle" color="warn" (click)="openDialogRemoveResource(element)"><mat-icon >remove_circle</mat-icon></button>
+    </td>
+   
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+<mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
+<button mat-fab class="addButton-div" (click)="openDialogAddProducto()"><mat-icon>add</mat-icon></button>
+</div>

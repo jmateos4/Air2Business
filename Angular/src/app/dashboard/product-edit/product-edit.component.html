@@ -1,0 +1,30 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <h2>Editar Categoria</h2>
+</div>
+<div fxLayout="column"  fxLayoutAlign="center center">
+  <p>Nombre del Producto:
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="data.producto.nombre" [formControl]="form.controls['nombre']" required>
+  </mat-form-field>
+  </p>
+  <p>codReferencia del Producto:
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="data.producto.codReferencia" [formControl]="form.controls['codReferencia']" required>
+  </mat-form-field>
+  </p>
+
+  <p>Descripcion del Producto:
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="data.producto.descripcion" [formControl]="form.controls['descripcion']" required>
+  </mat-form-field>
+  </p>
+
+  <p>Dimensiones del Producto: 
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="data.producto.dimensiones" [formControl]="form.controls['dimensiones']" required>
+  </mat-form-field>
+  </p>
+
+
+  <button mat-raised-button color="primary" (click)="editProducto()">Editar</button>
+</div>

@@ -1,0 +1,12 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <h2>Creacion de Categoria</h2>
+</div>
+<div fxLayout="column"  fxLayoutAlign="center center">
+  <p>Nombre de la Categoria: 
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nombre de la Categoria" [formControl]="form.controls['nombre']" required>
+  </mat-form-field>
+  </p>
+
+  <button mat-raised-button color="primary" (click)="addCategory()">Crear</button>
+</div>

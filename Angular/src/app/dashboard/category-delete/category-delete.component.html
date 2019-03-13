@@ -1,0 +1,12 @@
+<div>
+  <h3 mat-dialog-title>¿Desea realmente eliminar la categoria?</h3>
+  <div class="checkbox-container">
+    <mat-checkbox [(ngModel)]="checkedRobot"><span>Check</span></mat-checkbox>
+  </div>
+  <div mat-dialog-actions class="button-container">
+    <button mat-raised-button color="primary" (click)="deleteCat()" [disabled]="!captcha()">
+      <mat-icon>delete_forever</mat-icon>DELETE
+    </button>
+    <button mat-raised-button color="accent" [mat-dialog-close]>CANCEL</button>
+  </div>
+</div>
