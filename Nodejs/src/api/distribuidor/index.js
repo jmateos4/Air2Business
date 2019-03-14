@@ -2,6 +2,7 @@ import { Router } from 'express'
 import { middleware as query } from 'querymen'
 import { middleware as body } from 'bodymen'
 import { create, index, show, update, destroy } from './controller'
+import { token, master } from '../../services/passport'
 import { schema } from './model'
 export Distribuidor, { schema } from './model'
 
@@ -22,6 +23,7 @@ const { nombre, email, direccion, telefono, pedidos } = schema.tree
  * @apiError 404 Distribuidor not found.
  */
 router.post('/',
+  token({ required: true }),
   body({ nombre, email, direccion, telefono, pedidos }),
   create)
 
@@ -35,6 +37,7 @@ router.post('/',
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
 router.get('/',
+  token({ required: true }),
   query(),
   index)
 
@@ -63,6 +66,7 @@ router.get('/:id',
  * @apiError 404 Distribuidor not found.
  */
 router.put('/:id',
+  token({ required: true }),
   body({ nombre, email, direccion, telefono, pedidos }),
   update)
 
@@ -74,6 +78,7 @@ router.put('/:id',
  * @apiError 404 Distribuidor not found.
  */
 router.delete('/:id',
+  token({ required: true }),
   destroy)
 
 export default router

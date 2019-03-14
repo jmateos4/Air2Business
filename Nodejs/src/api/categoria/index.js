@@ -2,6 +2,7 @@ import { Router } from 'express'
 import { middleware as query } from 'querymen'
 import { middleware as body } from 'bodymen'
 import { create, index, show, update, destroy } from './controller'
+import { token, master } from '../../services/passport'
 import { schema } from './model'
 export Categoria, { schema } from './model'
 
@@ -19,6 +20,7 @@ const { nombre, productos } = schema.tree
  * @apiError 404 Categoria not found.
  */
 router.post('/',
+  token({ required: true }),
   body({ nombre, productos }),
   create)
 
@@ -32,6 +34,7 @@ router.post('/',
  * @apiError {Object} 400 Some parameters may contain invalid values.
  */
 router.get('/',
+  token({ required: true }),
   query(),
   index)
 
@@ -44,6 +47,7 @@ router.get('/',
  * @apiError 404 Categoria not found.
  */
 router.get('/:id',
+  token({ required: true }),
   show)
 
 /**
@@ -57,6 +61,7 @@ router.get('/:id',
  * @apiError 404 Categoria not found.
  */
 router.put('/:id',
+  token({ required: true }),
   body({ nombre, productos }),
   update)
 
@@ -68,6 +73,7 @@ router.put('/:id',
  * @apiError 404 Categoria not found.
  */
 router.delete('/:id',
+  token({ required: true }),
   destroy)
 
 export default router
