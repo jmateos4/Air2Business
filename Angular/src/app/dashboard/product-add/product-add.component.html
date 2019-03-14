@@ -1,28 +1,42 @@
 <div fxLayout="row" fxLayoutAlign="center center">
-  <h2>Creacion de Producto</h2>
+  <h2>Creación de Producto</h2>
 </div>
-<div fxLayout="column"  fxLayoutAlign="center center">
-  <p>Nombre del Producto: 
+<div fxLayout="column"   id="contenedor" fxLayoutAlign="center center">
+  
     <mat-form-field class="example-full-width">
     <input matInput placeholder="Nombre del producto" [formControl]="form.controls['nombre']" required>
   </mat-form-field>
-  </p>
 
-  <p>Codigo de Referencia del Producto: 
+
   <mat-form-field class="example-full-width">
-   <input matInput placeholder="codReferencia del producto" [formControl]="form.controls['codReferencia']" required>
-  </mat-form-field></p>
+   <input matInput placeholder="Código de Referencia del producto" [formControl]="form.controls['codReferencia']" required>
+  </mat-form-field>
 
-  <p>Descripcion del Producto
+  
   <mat-form-field class="example-full-width">
-    <input matInput placeholder="Descripcion del producto" [formControl]="form.controls['descripcion']" required>
-  </mat-form-field></p>
+    <input matInput placeholder="Descripción del producto" [formControl]="form.controls['descripcion']" required>
+  </mat-form-field>
 
-  <p>Dimensiones del Producto: 
+
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Dimensiones del producto" [formControl]="form.controls['dimensiones']" required>
-  </mat-form-field></p>
+  </mat-form-field>
 
+  <mat-form-field>
+      <mat-select placeholder="Distribudor" [formControl]="form.controls['distributor']" [(value)]="distributorSelected" name = "distributor">
+    <mat-option *ngFor="let distributor of allDistributors" [value]="distributor.id">
+      {{distributor.nombre}}
+    </mat-option>
+    </mat-select>
+    </mat-form-field>
+    <br/>
+    <mat-form-field>
+      <mat-select placeholder="Categoría" [formControl]="form.controls['category']" [(value)]="categorySelected" name = "category">
+    <mat-option *ngFor="let category of allCategories" [value]="category.id">
+      {{category.nombre}}
+    </mat-option>
+    </mat-select>
+    </mat-form-field>
     
   <button mat-raised-button color="primary" (click)="addProducto()">Crear</button>
 </div>

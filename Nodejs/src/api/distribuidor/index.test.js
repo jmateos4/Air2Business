@@ -14,7 +14,7 @@ beforeEach(async () => {
 test('POST /distribuidores 201', async () => {
   const { status, body } = await request(app())
     .post(`${apiRoot}`)
-    .send({ nombre: 'test', email: 'test', direccion: 'test', telefono: 'test', pedidos: 'test' })
+    .send({ nombre: 'test', email: 'test', direccion: 'test', telefono: 'test', pedidos: 'test', productos: 'test'})
   expect(status).toBe(201)
   expect(typeof body).toEqual('object')
   expect(body.nombre).toEqual('test')
@@ -22,6 +22,8 @@ test('POST /distribuidores 201', async () => {
   expect(body.direccion).toEqual('test')
   expect(body.telefono).toEqual('test')
   expect(body.pedidos).toEqual('test')
+  expect(body.pedidos).toEqual('test')
+  expect(body.productos).toEqual('test')
 })
 
 test('GET /distribuidores 200', async () => {
@@ -49,7 +51,7 @@ test('GET /distribuidores/:id 404', async () => {
 test('PUT /distribuidores/:id 200', async () => {
   const { status, body } = await request(app())
     .put(`${apiRoot}/${distribuidor.id}`)
-    .send({ nombre: 'test', email: 'test', direccion: 'test', telefono: 'test', pedidos: 'test' })
+    .send({ nombre: 'test', email: 'test', direccion: 'test', telefono: 'test', pedidos: 'test' ,productos: 'test'})
   expect(status).toBe(200)
   expect(typeof body).toEqual('object')
   expect(body.id).toEqual(distribuidor.id)
@@ -58,12 +60,13 @@ test('PUT /distribuidores/:id 200', async () => {
   expect(body.direccion).toEqual('test')
   expect(body.telefono).toEqual('test')
   expect(body.pedidos).toEqual('test')
+  expect(body.productos).toEqual('test')
 })
 
 test('PUT /distribuidores/:id 404', async () => {
   const { status } = await request(app())
     .put(apiRoot + '/123456789098765432123456')
-    .send({ nombre: 'test', email: 'test', direccion: 'test', telefono: 'test', pedidos: 'test' })
+    .send({ nombre: 'test', email: 'test', direccion: 'test', telefono: 'test', pedidos: 'test' , productos: 'test'})
   expect(status).toBe(404)
 })
 

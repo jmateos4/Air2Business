@@ -3,7 +3,7 @@ import { Distribuidor } from '.'
 let distribuidor
 
 beforeEach(async () => {
-  distribuidor = await Distribuidor.create({ nombre: 'test', email: 'test', direccion: 'test', telefono: 'test', pedidos: 'test' })
+  distribuidor = await Distribuidor.create({ nombre: 'test', email: 'test', direccion: 'test', telefono: 'test', pedidos: 'test' , productos: 'test'})
 })
 
 describe('view', () => {
@@ -16,6 +16,7 @@ describe('view', () => {
     expect(view.direccion).toBe(distribuidor.direccion)
     expect(view.telefono).toBe(distribuidor.telefono)
     expect(view.pedidos).toBe(distribuidor.pedidos)
+    expect(view.productos).toBe(distribuidor.productos)
     expect(view.createdAt).toBeTruthy()
     expect(view.updatedAt).toBeTruthy()
   })
@@ -29,6 +30,7 @@ describe('view', () => {
     expect(view.direccion).toBe(distribuidor.direccion)
     expect(view.telefono).toBe(distribuidor.telefono)
     expect(view.pedidos).toBe(distribuidor.pedidos)
+    expect(view.productos).toBe(distribuidor.productos)
     expect(view.createdAt).toBeTruthy()
     expect(view.updatedAt).toBeTruthy()
   })

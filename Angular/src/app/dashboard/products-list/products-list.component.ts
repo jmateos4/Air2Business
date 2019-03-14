@@ -18,7 +18,7 @@ import { ProductDeleteComponent } from '../product-delete/product-delete.compone
 })
 export class ProductsListComponent implements OnInit {
 
-  displayedColumns: string[] = ['id' , 'nombre', 'codReferencia', 'descripcion', 'dimensiones', 'acciones'];
+  displayedColumns: string[] = ['foto' , 'nombre', 'codReferencia', 'descripcion', 'dimensiones', 'Distribuidor', 'Categoria', 'acciones'];
   dataSource;
   productList: Producto[];
   product: ProductoContainer;

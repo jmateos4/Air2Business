@@ -4,10 +4,14 @@ import { middleware as body } from 'bodymen'
 import { create, index, show, update, destroy } from './controller'
 import { token, master } from '../../services/passport'
 import { schema } from './model'
+import {Distribuidor} from '../distribuidor/model'
 export Producto, { schema } from './model'
 
 const router = new Router()
-const { nombre, codReferencia, descripcion, dimensiones } = schema.tree
+const {foto, nombre, codReferencia, descripcion, dimensiones, distribuidor } = schema.tree
+const multer = require('multer')
+const storage = multer.memoryStorage()
+const upload = multer({storage: storage})
 
 /**
  * @api {post} /productos Create producto
@@ -23,7 +27,8 @@ const { nombre, codReferencia, descripcion, dimensiones } = schema.tree
  */
 router.post('/',
   token({ required: true }),
-  body({ nombre, codReferencia, descripcion, dimensiones }),
+  //body({foto, nombre, codReferencia, descripcion, dimensiones }),
+  upload.single('foto'),
   create)
 
 /**

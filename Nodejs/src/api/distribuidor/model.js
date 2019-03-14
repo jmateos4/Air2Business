@@ -20,7 +20,7 @@ const distribuidorSchema = new Schema({
   productos: [{
     type: Schema.ObjectId,
     ref: 'producto',
-  }]
+  }],
 }, {
   timestamps: true,
   toJSON: {
@@ -39,6 +39,7 @@ distribuidorSchema.methods = {
       direccion: this.direccion,
       telefono: this.telefono,
       pedidos: this.pedidos,
+      productos: this.productos,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt
     }

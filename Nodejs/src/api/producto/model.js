@@ -1,6 +1,9 @@
 import mongoose, { Schema } from 'mongoose'
 
 const productoSchema = new Schema({
+  foto: {
+    type: String
+  },
   nombre: {
     type: String
   },
@@ -15,11 +18,11 @@ const productoSchema = new Schema({
   },
   distribuidor: {
     type: Schema.ObjectId,
-    ref: 'distribuidor',
+    ref: 'Distribuidor',
   },
   categoria: {
     type: Schema.ObjectId,
-    ref: 'categoria',
+    ref: 'Categoria',
   }
 }, {
   timestamps: true,
@@ -34,10 +37,13 @@ productoSchema.methods = {
     const view = {
       // simple view
       id: this.id,
+      foto: this.foto,
       nombre: this.nombre,
       codReferencia: this.codReferencia,
       descripcion: this.descripcion,
       dimensiones: this.dimensiones,
+      distribuidor: this.distribuidor,
+      categoria: this.categoria,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt
     }
