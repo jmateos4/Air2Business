@@ -1,0 +1,30 @@
+<div fxLayout="row" fxLayoutAlign="center center">
+  <h2>Editar Distribuidor</h2>
+</div>
+<div fxLayout="column"  fxLayoutAlign="center center">
+  <p>Nombre del Distribuidor:
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="data.distributor.nombre" [formControl]="form.controls['nombre']" required>
+  </mat-form-field>
+  </p>
+  <p>Email del Distribudor:
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="data.distributor.email" [formControl]="form.controls['email']" required>
+  </mat-form-field>
+  </p>
+
+  <p>Direccion del Distribuidor:
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="data.distributor.direccion" [formControl]="form.controls['direccion']" required>
+  </mat-form-field>
+  </p>
+
+  <p>Telefono del Distriubidor: 
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="data.distributor.telefono" [formControl]="form.controls['telefono']" required>
+  </mat-form-field>
+  </p>
+
+
+  <button mat-raised-button color="primary" (click)="editDistributor()">Editar</button>
+</div>

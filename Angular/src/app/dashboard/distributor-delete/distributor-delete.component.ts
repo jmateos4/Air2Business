@@ -4,16 +4,16 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import {DashboardmoduleService} from '../../dashboard/dashboardmodule.service';
 
 @Component({
-  selector: 'app-product-delete',
-  templateUrl: './product-delete.component.html',
-  styleUrls: ['./product-delete.component.css']
+  selector: 'app-distributor-delete',
+  templateUrl: './distributor-delete.component.html',
+  styleUrls: ['./distributor-delete.component.css']
 })
-export class ProductDeleteComponent implements OnInit {
+export class DistributorDeleteComponent implements OnInit {
 
 
   checkedRobot: boolean;
   constructor(private dashService: DashboardmoduleService, public snackBar: MatSnackBar,
-              public dialogRef: MatDialogRef<ProductDeleteComponent>,
+              public dialogRef: MatDialogRef<DistributorDeleteComponent>,
               @Inject(MAT_DIALOG_DATA) public data: any) { }
 
   ngOnInit() {
@@ -26,11 +26,10 @@ export class ProductDeleteComponent implements OnInit {
     }
   }
 
-  deleteProd() {
-    this.dashService.deleteProduct(this.data.id).subscribe(resp => {
+  deleteDis() {
+    this.dashService.deleteDistributor(this.data.id).subscribe(resp => {
       this.dialogRef.close('Confirm');
     }, error => this.snackBar.open('Error', 'Close', {duration: 2000}));
   }
-
 
 }

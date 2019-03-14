@@ -2,17 +2,21 @@
 <mat-toolbar class="main-header" color="primary">
   <button class="void" (click)="sidenav.toggle()"><mat-icon  class="iconStyle" >menu</mat-icon></button>
   <div class="branding">
-          <span >Air 2 Bussiness - Admin Panel</span>
+          <span >COF Diosecesano - Triana</span>
   </div>
  
   <span class="example-spacer"></span>
   
-  <!-- <button mat-raised-button color="primary" (click)="salir()"><mat-icon class="example-icon">exit_to_app</mat-icon></button>-->
+  <a href="" class="colorb" (click)="salir()"><mat-icon class="example-icon">exit_to_app</mat-icon></a>
 </mat-toolbar>
 <div class="container">
 <mat-sidenav-container class="example-container">
   <mat-sidenav #sidenav mode="side" class="menu-lateral">
     <mat-list class="listFStyle" role="list">
+        <a routerLink="/home"><mat-list-item role="listitem" class="listStyle"><mat-icon class="iconStyleList" >home</mat-icon> Inicio </mat-list-item></a>
+        <a routerLink="/home/product-list"><mat-list-item role="listitem" class="listStyle"><mat-icon class="iconStyleList" >collections_bookmark</mat-icon> Productos </mat-list-item></a>
+        <a routerLink="/home/categories-list"><mat-list-item role="listitem" class="listStyle"><mat-icon class="iconStyleList" >view_list</mat-icon> Categorias </mat-list-item></a>
+        <a routerLink="/home/distributor-list"><mat-list-item role="listitem" class="listStyle"><mat-icon class="iconStyleList" >group</mat-icon> Distribuidores </mat-list-item></a>
     </mat-list>
   </mat-sidenav>
   <mat-sidenav-content fxLayout="row" fxLayoutAlign="center center" >

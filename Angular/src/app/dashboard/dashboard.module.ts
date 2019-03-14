@@ -26,6 +26,10 @@ import { ProductEditComponent } from './product-edit/product-edit.component';
 import { ProductDeleteComponent } from './product-delete/product-delete.component';
 import { CategoryDeleteComponent } from './category-delete/category-delete.component';
 import {MatCheckboxModule} from '@angular/material/checkbox';
+import { DistributorListComponent } from './distributor-list/distributor-list.component';
+import { DistributorAddComponent } from './distributor-add/distributor-add.component';
+import { DistributorEditComponent } from './distributor-edit/distributor-edit.component';
+import { DistributorDeleteComponent } from './distributor-delete/distributor-delete.component';
 
 
 
@@ -40,7 +44,11 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     CategoryEditComponent,
     ProductEditComponent,
     ProductDeleteComponent,
-    CategoryDeleteComponent
+    CategoryDeleteComponent,
+    DistributorListComponent,
+    DistributorAddComponent,
+    DistributorEditComponent,
+    DistributorDeleteComponent
   ],
   imports: [
     CommonModule,
@@ -67,9 +75,13 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
   entryComponents: [
     ProductAddComponent,
     ProductEditComponent,
+    ProductDeleteComponent,
     CategoryAddComponent,
     CategoryEditComponent,
-    CategoryDeleteComponent
+    CategoryDeleteComponent,
+    DistributorAddComponent,
+    DistributorEditComponent,
+    DistributorDeleteComponent
   ]
 })
 export class DashboardModule { }

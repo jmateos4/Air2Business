@@ -23,12 +23,21 @@ mat-sidenav-container {
     
 }
 
-.listStyle {
+.listStyle a{
 margin-top: 5%;
+text-decoration: none;
+
 }
+
+.listStyle a:visited{
+    margin-top: 5%;
+    text-decoration: none;
+    
+    }
 
 .example-icon {
 padding: 0 14px;
+color: white;
 }
 
 .example-spacer {
@@ -42,4 +51,13 @@ flex: 1 1 auto;
 .style {
     text-decoration: none;
     color: white;
+}
+.colorb {
+    color: white;
+    
+}
+
+.colorb:visited {
+    color: white;
+    
 }

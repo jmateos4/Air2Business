@@ -8,6 +8,7 @@ import { Producto } from '../../interfaces/producto-response.interface';
 import { ProductoContainer } from '../../interfaces/producto-container.interface';
 import { ProductAddComponent } from '../product-add/product-add.component';
 import { ProductEditComponent } from '../product-edit/product-edit.component';
+import { ProductDeleteComponent } from '../product-delete/product-delete.component';
 
 
 @Component({
@@ -62,22 +63,15 @@ constructor(private dashService: DashboardmoduleService, public snackBar: MatSna
       this.getListProducts();
     });
   }
-/*
-  openDialogRemoveResource(elemento: ResourceList) {
-    const dialogRemove = this.dialog.open(GeneralDeleteComponent, {
-      data: { recurso: elemento , id: elemento.id}
+
+  openDialogRemoveProducto(element: Producto) {
+    const dialogDeleteProducto = this.dialog.open(ProductDeleteComponent, {
+      data: { id: element.id }
     });
 
-    dialogRemove.afterClosed().subscribe(result => {
-      if (result) {
-        this.dashService.deleteResource(elemento.id).subscribe(listaRecursos => {
-          this.getListRecursos();
-         }, error => {
-           console.log('Error.');
-         });
-      }
+    dialogDeleteProducto.afterClosed().subscribe(result => {
+      this.getListProducts();
     });
   }
-*/
 
 }

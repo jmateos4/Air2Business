@@ -1,0 +1,28 @@
+.addButton-div {
+    position: fixed;
+    right: 30px;
+    bottom: 15px;
+    }
+  
+    .separador {
+      margin-top: 5%;
+    }
+
+    .buttonStyle {
+      margin-left: 5%;
+    }
+
+    .ancho{
+      text-align: center;
+      margin: auto;
+      margin-bottom: 5%;
+      width: 90%;
+    }
+    table {
+      text-align: center; 
+      width: 100%;
+    }
+  
+    .center{
+      text-align: center;
+    }
