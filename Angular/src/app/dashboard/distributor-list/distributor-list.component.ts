@@ -44,6 +44,7 @@ constructor(private dashService: DashboardmoduleService, public snackBar: MatSna
 
   openDialogAddDistributor() {
     const dialogoAddDistributor = this.dialog.open(DistributorAddComponent, {
+      width: '450px',
       data: { recurso: undefined }
     });
 
@@ -55,6 +56,7 @@ constructor(private dashService: DashboardmoduleService, public snackBar: MatSna
 
   openDialogEditDistributor(element: Distribuidor) {
     const dialogoEditDistributor = this.dialog.open(DistributorEditComponent, {
+      width: '450px',
       data: { distributor : element }
     });
 

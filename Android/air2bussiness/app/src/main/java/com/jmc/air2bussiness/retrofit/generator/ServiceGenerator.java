@@ -15,6 +15,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class ServiceGenerator {
 
     private static final String BASE_URL = "https://infinite-hollows-38239.herokuapp.com/";
+    //private static final String BASE_URL = "http://0.0.0.0:9000/";
     public static String MASTER_KEY = "2ASUdJE0bhSCDs7h9Z96BDoeQ7MGBPuk";
 
     // Solución temporal

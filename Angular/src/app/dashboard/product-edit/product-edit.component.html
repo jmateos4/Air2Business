@@ -1,29 +1,25 @@
-<div fxLayout="row" fxLayoutAlign="center center">
+<div  id="contenedor" fxLayout="row" fxLayoutAlign="center center">
   <h2>Editar Producto</h2>
 </div>
-<div fxLayout="column"  fxLayoutAlign="center center">
-  <p>Nombre del Producto:
+<div fxLayout="column"   fxLayoutAlign="center center">
+  
     <mat-form-field class="example-full-width">
-    <input matInput placeholder="data.producto.nombre" [formControl]="form.controls['nombre']" required>
+    <input matInput placeholder="Nombre del Producto" [formControl]="form.controls['nombre']" required>
   </mat-form-field>
-  </p>
-  <p>codReferencia del Producto:
-    <mat-form-field class="example-full-width">
-    <input matInput placeholder="data.producto.codReferencia" [formControl]="form.controls['codReferencia']" required>
-  </mat-form-field>
-  </p>
 
-  <p>Descripcion del Producto:
     <mat-form-field class="example-full-width">
-    <input matInput placeholder="data.producto.descripcion" [formControl]="form.controls['descripcion']" required>
+    <input matInput placeholder="Codigo de Referencia del Producto" [formControl]="form.controls['codReferencia']" required>
   </mat-form-field>
-  </p>
 
-  <p>Dimensiones del Producto: 
+
+
     <mat-form-field class="example-full-width">
-    <input matInput placeholder="data.producto.dimensiones" [formControl]="form.controls['dimensiones']" required>
+    <input matInput placeholder="Descripción del producto" [formControl]="form.controls['descripcion']" required>
   </mat-form-field>
-  </p>
+   
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="Dimensiones del producto" [formControl]="form.controls['dimensiones']" required>
+  </mat-form-field>
 
 
   <button mat-raised-button color="primary" (click)="editProducto()">Editar</button>

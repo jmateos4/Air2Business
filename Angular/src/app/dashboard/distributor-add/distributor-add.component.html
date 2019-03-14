@@ -2,26 +2,21 @@
   <h2>Creacion de Distribuidor</h2>
 </div>
 <div fxLayout="column"  fxLayoutAlign="center center">
-  <p>Nombre del distribuidor: 
     <mat-form-field class="example-full-width">
     <input matInput placeholder="Nombre del Distribuidor" [formControl]="form.controls['nombre']" required>
   </mat-form-field>
-  </p>
 
-  <p>Email del distribuidor: 
   <mat-form-field class="example-full-width">
    <input matInput placeholder="Email del Distribuidor" [formControl]="form.controls['email']" required>
-  </mat-form-field></p>
+  </mat-form-field>
 
-  <p>Direccion del distribuidor:
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Direccion del Distribuidor" [formControl]="form.controls['direccion']" required>
-  </mat-form-field></p>
+  </mat-form-field>
 
-  <p>Telefono del distribuidor: 
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Telefono del Distribuidor" [formControl]="form.controls['telefono']" required>
-  </mat-form-field></p>
+  </mat-form-field>
 
     
   <button mat-raised-button color="primary" (click)="addDistributor()">Crear</button>

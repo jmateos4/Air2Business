@@ -1,4 +1,4 @@
-package com.jmc.air2bussiness;
+package com.jmc.air2bussiness.ui;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -6,9 +6,15 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.view.MenuItem;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.TextView;
 
-public class NavigationActivity extends AppCompatActivity {
+import com.jmc.air2bussiness.R;
+import com.jmc.air2bussiness.fragment.ProductoFragment;
+import com.jmc.air2bussiness.listener.ProductosInteractionListener;
+
+public class NavigationActivity extends AppCompatActivity implements ProductosInteractionListener {
 
   private TextView mTextMessage;
 
@@ -20,23 +26,18 @@ public class NavigationActivity extends AppCompatActivity {
       Fragment f = null;
 
       switch (item.getItemId()) {
-        case R.id.navigation_home:
-         // f = new HomeFragment();
+        case R.id.navigation_prod:
+            getSupportFragmentManager()
+                    .beginTransaction()
+                    .replace(R.id.contenedor, new ProductoFragment())
+                    .commit();
           break;
-        case R.id.navigation_dashboard:
+        case R.id.navigation_cart:
          // f = new DashboardFragment();
           break;
-        case R.id.navigation_notifications:
+        case R.id.navigation_profile:
           //f = new NotificationsFragment();
           break;
-      }
-
-      if (f != null) {
-        getSupportFragmentManager()
-          .beginTransaction()
-          .replace(R.id.contenedor, f)
-          .commit();
-        return true;
       }
 
       return false;
@@ -48,17 +49,13 @@ public class NavigationActivity extends AppCompatActivity {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_navigation);
 
-    mTextMessage = (TextView) findViewById(R.id.message);
-    BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
-    navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-
-    // Definimos el fragmento que queremos cargar por defecto cuando
-    // se lanza este Activity
-    // Lo más normal es que sea el elemento del Menú que se encuentra
-    // más a la izquierda
     getSupportFragmentManager()
       .beginTransaction()
-      //.add(R.id.contenedor, new HomeFragment())
+      .add(R.id.contenedor, new ProductoFragment())
       .commit();
+
+      BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+      navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
   }
 }

@@ -15,11 +15,11 @@ const distribuidorSchema = new Schema({
   },
   pedidos: [{
     type: Schema.ObjectId,
-    ref: 'pedido',
+    ref: 'Pedido',
   }],
   productos: [{
     type: Schema.ObjectId,
-    ref: 'producto',
+    ref: 'Producto',
   }],
 }, {
   timestamps: true,

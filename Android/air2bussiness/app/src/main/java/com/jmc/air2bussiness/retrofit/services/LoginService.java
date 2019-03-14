@@ -1,7 +1,7 @@
 package com.jmc.air2bussiness.retrofit.services;
 
 
-import com.jmc.air2bussiness.model.LoginResponse;
+import com.jmc.air2bussiness.response.LoginResponse;
 import com.jmc.air2bussiness.model.Registro;
 
 import retrofit2.Call;

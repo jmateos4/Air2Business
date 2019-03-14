@@ -49,6 +49,7 @@ export class CategoriesListComponent implements OnInit {
 
   openDialogAddCategory() {
     const dialogoAddCategory = this.dialog.open(CategoryAddComponent, {
+      width: '450px',
       data: { recurso: undefined }
     });
 
@@ -59,6 +60,7 @@ export class CategoriesListComponent implements OnInit {
   }
   openDialogEditCategory(element: Categoria) {
     const dialogoEditCategoria = this.dialog.open(CategoryEditComponent, {
+      width: '450px',
       data: { categoria: element }
     });
 

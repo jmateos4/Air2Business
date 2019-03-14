@@ -2,11 +2,10 @@
   <h2>Editar Categoria</h2>
 </div>
 <div fxLayout="column"  fxLayoutAlign="center center">
-  <p>Nombre de la Categoria: 
+
     <mat-form-field class="example-full-width">
-    <input matInput placeholder="data.category.nombre" [formControl]="form.controls['nombre']" required>
+    <input matInput placeholder="Nombre de la categoria" [formControl]="form.controls['nombre']" required>
   </mat-form-field>
-  </p>
 
   <button mat-raised-button color="primary" (click)="editCategory()">Editar</button>
 </div>

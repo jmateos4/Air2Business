@@ -1,7 +1,8 @@
-package com.jmc.air2bussiness.model;
+package com.jmc.air2bussiness.response;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
+import com.jmc.air2bussiness.model.User;
 
 public class LoginResponse {
 

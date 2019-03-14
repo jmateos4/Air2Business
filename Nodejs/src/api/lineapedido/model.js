@@ -3,7 +3,7 @@ import mongoose, { Schema } from 'mongoose'
 const lineapedidoSchema = new Schema({
   producto: {
       type: Schema.ObjectId,
-      ref: 'producto',
+      ref: 'Producto',
   },
   cantidad: {
     type: String

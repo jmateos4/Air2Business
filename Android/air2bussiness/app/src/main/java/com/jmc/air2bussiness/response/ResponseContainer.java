@@ -1,4 +1,4 @@
-package com.jmc.air2bussiness.model;
+package com.jmc.air2bussiness.response;
 
 import java.util.List;
 

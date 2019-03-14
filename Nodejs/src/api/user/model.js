@@ -36,7 +36,7 @@ const userSchema = new Schema({
   },
   pedidos: [{
     type: Schema.ObjectId,
-    ref: 'pedido',
+    ref: 'Pedido',
   }]
 }, {
   timestamps: true

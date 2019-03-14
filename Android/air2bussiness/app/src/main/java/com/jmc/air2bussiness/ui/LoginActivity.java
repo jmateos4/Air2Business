@@ -1,6 +1,5 @@
-package com.jmc.air2bussiness;
+package com.jmc.air2bussiness.ui;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -13,7 +12,9 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.jmc.air2bussiness.model.LoginResponse;
+import com.jmc.air2bussiness.R;
+import com.jmc.air2bussiness.UtilToken;
+import com.jmc.air2bussiness.response.LoginResponse;
 import com.jmc.air2bussiness.retrofit.generator.ServiceGenerator;
 import com.jmc.air2bussiness.retrofit.services.LoginService;
 
@@ -65,8 +66,8 @@ public class LoginActivity extends AppCompatActivity {
 
                             UtilToken.setToken(LoginActivity.this, response.body().getToken());
                             UtilToken.setIdUser(LoginActivity.this, response.body().getUser().getId());
-                            Toast.makeText(LoginActivity.this, "Sesion Buena", Toast.LENGTH_LONG).show();
-                            //startActivity(new Intent(LoginActivity.this, NavigationActivity.class));
+                            //Toast.makeText(LoginActivity.this, "Sesion Buena", Toast.LENGTH_LONG).show();
+                            startActivity(new Intent(LoginActivity.this, NavigationActivity.class));
                             //finish();
                         }
                     }

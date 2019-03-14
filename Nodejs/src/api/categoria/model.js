@@ -6,7 +6,7 @@ const categoriaSchema = new Schema({
   },
   productos: [{
     type: Schema.ObjectId,
-    ref: 'producto',
+    ref: 'Producto',
   }]
 }, {
   timestamps: true,

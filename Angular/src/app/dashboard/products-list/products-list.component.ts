@@ -44,7 +44,9 @@ constructor(private dashService: DashboardmoduleService, public snackBar: MatSna
   }
 
   openDialogAddProducto() {
+
     const dialogoAddProducto = this.dialog.open(ProductAddComponent, {
+      width: '500px',
       data: { recurso: undefined }
     });
 
@@ -56,6 +58,7 @@ constructor(private dashService: DashboardmoduleService, public snackBar: MatSna
 
   openDialogEditProducto(element: Producto) {
     const dialogoEditProducto = this.dialog.open(ProductEditComponent, {
+      width: '500px',
       data: { producto: element }
     });
 

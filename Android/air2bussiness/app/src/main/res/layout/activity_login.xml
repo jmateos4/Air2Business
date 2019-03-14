@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#0e2b59"
-    tools:context=".LoginActivity">
+    tools:context=".ui.LoginActivity">
 
     <TextView
         android:id="@+id/textLogo"
@@ -32,9 +32,10 @@
         android:backgroundTint="@android:color/white"
         android:ems="10"
         android:hint="Email"
-        android:inputType="textPersonName"
-        android:textColorHint="@color/white"
+        android:inputType="textWebEmailAddress|textPersonName"
+        android:text="admin@admin.com"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textLogo"
@@ -49,8 +50,9 @@
         android:ems="10"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textColorHint="@color/white"
+        android:text="12345678"
         android:textColor="@color/white"
+        android:textColorHint="@color/white"
         app:layout_constraintEnd_toEndOf="@+id/editUser"
         app:layout_constraintStart_toStartOf="@+id/editUser"
         app:layout_constraintTop_toBottomOf="@+id/editUser"
