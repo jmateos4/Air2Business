@@ -9,7 +9,6 @@ export const DashboardRoutes: Routes = [
     { path: 'categories-list', component: CategoriesListComponent},
     { path: 'product-list', component: ProductsListComponent},
     {path: 'distributor-list', component: DistributorListComponent}
-   // { path: 'categories-add', component: CategoriesAddComponent},
 
 ];
 

@@ -1,36 +1,32 @@
 <div class="container">
   <div fxFlexFill>
     <div  fxLayout.gt-xs="row" fxLayout="column" fxFlexFill fxLayoutGap="10px" fxLayoutAlign="center center">
-      <mat-card fxFlex="30%" class="login">
-          <mat-icon class="icon">polymer</mat-icon>
-        <mat-card-header fxLayoutAlign="center center">
-          <mat-card-title>Login</mat-card-title>
-          <mat-card-subtitle fxShow.gt-xs="true" >Introduce los datos de sesión</mat-card-subtitle>
-        </mat-card-header>
-        <mat-card-content fxLayout.gt-xs="row" fxLayout="column" fxLayoutAlign="center center">
-          <form [formGroup]="loginForm" fxLayout="column">
-            <mat-form-field >
-              <input matInput placeholder="Email" required type="email" formControlName="email">
-            </mat-form-field>
-            <div *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].dirty || loginForm.controls['email'].touched)" class="alert alert-danger">
-              <div *ngIf="loginForm.controls['email'].errors.required">
-                Email obligatorio
-              </div>
-              
-              <div *ngIf="loginForm.controls['email'].errors.email">
-                Email incorrecto
-              </div>
-
-            </div>
-            <mat-form-field>
-              <input matInput placeholder="Password *" type="password" formControlName="password">
-            </mat-form-field>
-            
-          </form>
-        </mat-card-content>
-        <mat-card-actions>
-          <button mat-raised-button color="primary" (click)="doLogin()">Entrar</button>
-        </mat-card-actions>
-      </mat-card>
+          <mat-card fxFlex="30%" class="login">
+              <mat-icon class="icon">polymer</mat-icon>
+            <mat-card-content>
+              <form [formGroup]="form" (ngSubmit)="doLogin()">
+                <div class="text-xs-center pb-1">
+                  <p class="mat-text-muted">Inicia sesión con tu email</p>
+                </div>
+                <div fxLayout="column" fxLayoutAlign="space-around">
+                  <div class="pb-1">
+                    <mat-form-field style="width: 100%">
+                      <input matInput placeholder="Email" [formControl]="form.controls['email']">
+                    </mat-form-field>
+                    <small *ngIf="form.controls['email'].hasError('required') && form.controls['email'].touched" class="mat-text-warn">El campo 'Email' es obligatorio.</small>
+                  </div>
+                  <div class="pb-1">
+                    <mat-form-field style="width: 100%">
+                      <input matInput type="password" placeholder="Contraseña" [formControl]="form.controls['password']">
+                    </mat-form-field>
+                    <small *ngIf="form.controls['password'].hasError('required') && form.controls['password'].touched" class="mat-text-warn">El campo 'Contraseña' es obligatorio</small>
+                  </div>
+                
+                  <button mat-raised-button color="primary" type="submit" [disabled]="!form.valid">Enviar</button>
+                </div>
+               
+              </form>
+            </mat-card-content>
+          </mat-card>
     </div>
   </div>

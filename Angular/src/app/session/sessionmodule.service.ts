@@ -21,12 +21,24 @@ const requestOptions = {
 })
 
 export class SessionService {
-    constructor(private http: HttpClient) {}
-    headers: HttpHeaders = new HttpHeaders({
-        'Content-Type' : 'application/json',
-        'Acces-Control-Allow-Origin': '*'
+  constructor(private http: HttpClient) { }
+  request(email: string, password: string) {
+    let emailPass: string;
+    emailPass = btoa(email + ':' + password);
+    // tslint:disable-next-line:no-shadowed-variable
+    const requestOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        // tslint:disable-next-line:object-literal-key-quotes
+        'Authorization': `Basic ${emailPass}`,
+        'Access-Control-Allow-Origin': '*'
+      })
+    };
 
-    });
+    return requestOptions;
+  }
+
+
     getToken(): string {
         return localStorage.getItem('token');
     }
@@ -43,62 +55,24 @@ export class SessionService {
         }
       }
 
-      isAdmin() {
-        if (!(this.getTokenDecode() == null)) {
-          if (this.getTokenDecode().role === 'admin') {
-            return true;
-          } else {
-            return false;
-          }
-        } else {
-          return false;
-        }
-      }
-      isUser() {
-        if (!(this.getTokenDecode() == null)) {
-          if (this.getTokenDecode().role === 'user') {
-            return true;
-          } else {
-            return false;
-          }
-        } else {
-          return false;
-        }
-      }
-
-
-    login(loginDto: LoginDto): Observable<LoginResponse> {
+      login(loginDto: LoginDto): Observable<LoginResponse> {
         // tslint:disable-next-line:no-shadowed-variable
-        const requestOptions = {
-          headers: new HttpHeaders({
-            'Content-Type': 'application/json',
-            // tslint:disable-next-line:object-literal-key-quotes
-            'Authorization': `Basic ` + btoa(`${loginDto.email}:${loginDto.password}`),
-            'Access-Control-Allow-Origin': '*'
-          })
-        };
-        class Metakey {
-          // tslint:disable-next-line:variable-name
-          access_token: string;
-
-          // tslint:disable-next-line:variable-name
-          constructor(access_token: string) {
-            this.access_token = access_token;
-          }
-        }
-        const metaKey = new Metakey('2ASUdJE0bhSCDs7h9Z96BDoeQ7MGBPuk');
-        return this.http.post<LoginResponse>(`${authUrl}/auth`, metaKey, requestOptions);
+        const requestOptions = this.request(loginDto.email, loginDto.password);
+        return this.http.post<LoginResponse>(`${authUrl}/auth`, environment.masterKey, requestOptions);
       }
-
     setLoginData(loginResponse: LoginResponse) {
         localStorage.setItem('token', loginResponse.token);
-        localStorage.setItem('name' , loginResponse.name);
-        localStorage.setItem('email', loginResponse.email);
-        localStorage.setItem('password', loginResponse.password);
-        localStorage.setItem('phone', loginResponse.phone);
+        localStorage.setItem('name' , loginResponse.user.name);
+        localStorage.setItem('email', loginResponse.user.email);
+        localStorage.setItem('role', loginResponse.user.role);
     }
 
-
+    isAdmin() {
+      return localStorage.getItem('role') === 'admin';
+    }
+    isUser() {
+      return localStorage.getItem('role') === 'user';
+    }
 }
 
 

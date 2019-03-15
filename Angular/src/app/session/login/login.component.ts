@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { SessionService } from '../sessionmodule.service';
 import { Router } from '@angular/router';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators , FormBuilder} from '@angular/forms';
 import { LoginResponse } from '../../interfaces/login-response.interface';
+import { LoginDto } from '../../dto/login.dto';
 
 @Component({
   selector: 'app-login',
@@ -14,29 +15,33 @@ export class LoginComponent implements OnInit {
   email: string;
   password: string;
 
-  loginForm: FormGroup;
-
-  constructor(private sessionService: SessionService, private router: Router ) { }
+  public form: FormGroup;
+  constructor(private fb: FormBuilder, private router: Router, private sessionService: SessionService) {}
 
   ngOnInit() {
-    this.loginForm = new FormGroup( {
-      email: new FormControl('', [Validators.required, Validators.email]),
-      password: new FormControl('',  [Validators.required, Validators.minLength(4)])
-    });
+    this.form = this.fb.group ( {
+      email: [null , Validators.compose ( [ Validators.required ] )],
+      password: [null , Validators.compose ( [ Validators.required ] )]
+    } );
   }
 
   doLogin() {
-    const userLogin: LoginResponse = this.loginForm.value as LoginResponse;
-    console.log(userLogin);
-    this.sessionService.login(userLogin).subscribe(loginResp => {
-      console.log(loginResp);
+    const loginDto: LoginDto = this.form.value;
+    this.sessionService.login(loginDto).subscribe(loginResp => {
       this.sessionService.setLoginData(loginResp);
-      this.router.navigate(['/home']);
+      if (this.sessionService.isAdmin()) {
+        console.log(loginResp);
+        this.router.navigate(['/home']);
+      } else {
+        localStorage.clear();
+        console.log('No eres administrador, no tienes acceso');
+      }
     }, error => {
-      console.log(error);
+      console.log('error');
     }
     );
-}
+  }
+
 
 
 }

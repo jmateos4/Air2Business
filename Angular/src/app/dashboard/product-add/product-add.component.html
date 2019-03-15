@@ -1,5 +1,6 @@
 <div fxLayout="row" fxLayoutAlign="center center">
   <h2>Creación de Producto</h2>
+  
 </div>
 <div fxLayout="column"   id="contenedor" fxLayoutAlign="center center">
   
@@ -21,7 +22,10 @@
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Dimensiones del producto" [formControl]="form.controls['dimensiones']" required>
   </mat-form-field>
-
+    <div>
+        <input type="file" accept="*" #file (change)="onFilesAdded()" [disabled]="uploading || uploadSuccessful" value="Seleccionar fichero" />
+    </div>
+    <br>
   <mat-form-field>
       <mat-select placeholder="Distribudor" [formControl]="form.controls['distributor']" [(value)]="distributorSelected" name = "distributor">
     <mat-option *ngFor="let distributor of allDistributors" [value]="distributor.id">
@@ -38,5 +42,22 @@
     </mat-select>
     </mat-form-field>
     
-  <button mat-raised-button color="primary" (click)="addProducto()">Crear</button>
+
+    <mat-dialog-content fxFlex>
+        <mat-list>
+          <mat-list-item *ngFor="let file of files">
+    
+            <h4 mat-line>{{file.name}}</h4>
+    
+            <mat-progress-bar *ngIf="progress" mode="determinate" [value]="progress[file.name].progress | async"></mat-progress-bar>
+    
+          </mat-list-item>
+        </mat-list>
+      </mat-dialog-content>
+
+
+      <mat-dialog-actions class="actions">
+          <button *ngIf="showCancelButton" mat-button mat-dialog-close>Cancelar</button>
+          <button mat-raised-button color="primary" [disabled]="!canBeClosed" (click)="closeDialog()">{{primaryButtonText}}</button>
+        </mat-dialog-actions>
 </div>

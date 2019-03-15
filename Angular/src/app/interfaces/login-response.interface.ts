@@ -1,7 +1,6 @@
+import { UserResponse } from './user-response.interface';
+
 export interface LoginResponse {
     token: string;
-    name: string;
-    email: string;
-    password: string;
-    phone: string;
+    user: UserResponse;
 }

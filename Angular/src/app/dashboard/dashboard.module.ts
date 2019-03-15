@@ -30,9 +30,8 @@ import { DistributorListComponent } from './distributor-list/distributor-list.co
 import { DistributorAddComponent } from './distributor-add/distributor-add.component';
 import { DistributorEditComponent } from './distributor-edit/distributor-edit.component';
 import { DistributorDeleteComponent } from './distributor-delete/distributor-delete.component';
-
-
-
+import { MatProgressBarModule } from '@angular/material';
+import { DashboardmoduleService } from './dashboardmodule.service';
 
 
 @NgModule({
@@ -57,6 +56,7 @@ import { DistributorDeleteComponent } from './distributor-delete/distributor-del
     MatMenuModule,
     MatToolbarModule,
     MatListModule,
+    MatProgressBarModule,
     MatTableModule,
     MatInputModule,
     MatSidenavModule,
@@ -82,6 +82,7 @@ import { DistributorDeleteComponent } from './distributor-delete/distributor-del
     DistributorAddComponent,
     DistributorEditComponent,
     DistributorDeleteComponent
-  ]
+  ],
+  providers: [DashboardmoduleService],
 })
 export class DashboardModule { }

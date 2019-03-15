@@ -43,16 +43,19 @@ constructor(private dashService: DashboardmoduleService, public snackBar: MatSna
     });
   }
 
-  openDialogAddProducto() {
+  public openDialogAddProducto() {
+    const dialogRef = this.dialog.open(ProductAddComponent,
+      {
+        width: '500px',
+        data: { id: 1 }
+      });
 
-    const dialogoAddProducto = this.dialog.open(ProductAddComponent, {
-      width: '500px',
-      data: { recurso: undefined }
-    });
-
-    dialogoAddProducto.afterClosed().subscribe(result => {
-      this.getListProducts();
-      console.log(result);
+    dialogRef.afterClosed().subscribe(result => {
+      this.snackBar.open(
+        'El fichero se subió correctamente', 'Cerrar', {
+        duration: 3000,
+        verticalPosition: 'top'
+      });
     });
   }
 
