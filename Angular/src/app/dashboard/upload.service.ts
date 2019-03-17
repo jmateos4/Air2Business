@@ -17,7 +17,7 @@ export class UploadService {
   constructor(private http: HttpClient) { }
 
   // tslint:disable-next-line:max-line-length
-  public upload(files: Set<File>, form: ProductoAddDto): { [key: string]: Observable<number> } {
+  public upload(files: Set<File>, form: ProductoAddDto, idDis: string, idCat: string): { [key: string]: Observable<number> } {
     // this will be the our resulting map
     this.uploadUrl = `https://infinite-hollows-38239.herokuapp.com/productos?access_token=${this.token}`;
     const status = {};
@@ -30,8 +30,8 @@ export class UploadService {
       formData.append('codReferencia', form.codReferencia);
       formData.append('descripcion', form.descripcion);
       formData.append('dimensiones', form.dimensiones);
-      formData.append('distribuidor', form.distribuidor);
-      formData.append('categoria', form.categoria);
+      formData.append('distribuidor', idDis);
+      formData.append('categoria', idCat);
 
       // create a http-post request and pass the form
       // tell it to report the upload progress

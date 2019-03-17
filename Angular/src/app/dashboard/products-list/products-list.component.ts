@@ -56,6 +56,7 @@ constructor(private dashService: DashboardmoduleService, public snackBar: MatSna
         duration: 3000,
         verticalPosition: 'top'
       });
+      this.getListProducts();
     });
   }
 

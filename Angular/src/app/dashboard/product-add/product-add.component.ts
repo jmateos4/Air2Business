@@ -93,7 +93,7 @@ export class ProductAddComponent implements OnInit {
 
       // start the upload and save the progress map
       this.progress = this.uploadService.upload(
-        this.files, this.form.value);
+        this.files, this.form.value, this.form.value.distributor, this.form.value.category);
 
       // tslint:disable-next-line:forin
       for (const key in this.progress) {
