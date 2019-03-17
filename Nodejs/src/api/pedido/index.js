@@ -7,7 +7,7 @@ import { schema } from './model'
 export Pedido, { schema } from './model'
 
 const router = new Router()
-const { lineaspedido, distribuidor } = schema.tree
+const { lineaspedido, estadopedido, distribuidor, empresa} = schema.tree
 
 /**
  * @api {post} /pedidos Create pedido
@@ -21,7 +21,7 @@ const { lineaspedido, distribuidor } = schema.tree
  */
 router.post('/',
   token({ required: true }),
-  body({ lineaspedido, distribuidor }),
+  body({ lineaspedido,estadopedido, distribuidor, empresa }),
   create)
 
 /**
@@ -62,7 +62,7 @@ router.get('/:id',
  */
 router.put('/:id',
   token({ required: true }),
-  body({ lineaspedido, distribuidor }),
+  body({ lineaspedido,estadopedido, distribuidor, empresa }),
   update)
 
 /**

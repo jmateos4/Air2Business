@@ -30,7 +30,9 @@ pedidoSchema.methods = {
       // simple view
       id: this.id,
       lineaspedido: this.lineaspedido,
+      estadopedido: this.estadopedido,
       distribuidor: this.distribuidor,
+      empresa: this.empresa,
       createdAt: this.createdAt,
       updatedAt: this.updatedAt
     }

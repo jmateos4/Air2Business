@@ -1,11 +1,39 @@
 import { success, notFound } from '../../services/response/'
 import { Pedido } from '.'
+import { User } from '../user'
+import { Producto } from  '../producto'
+import { Lineapedido } from '../lineapedido'
 
-export const create = ({ bodymen: { body } }, res, next) =>
+/*export const create = ({ bodymen: { body } }, res, next) =>
   Pedido.create(body)
     .then((pedido) => pedido.view(true))
     .then(success(res, 201))
     .catch(next)
+*/
+
+// Creación de pedido tocho
+
+export const create = async({ bodymen: { body } }, res, next) => {
+ var pedidoC;
+  await Pedido.create(body)
+ .then((pedido)=> {
+   if (pedido.estado === 'completado' || pedido.lineaspedido[length] === 0) {
+      Distribuidor.findById(pedido.view(true).distribuidor)
+      .then ((distribuidor) => {
+        pedido.distribuidor = distribuidor.id;
+      })
+      Empresa.findById(pedido.view(true).empresa)
+      .then ((empresa) => {
+        pedido.empresa = empresa.id;
+        
+      })
+      .then(success(res, 201))
+      .catch(next)
+   } else {
+
+   }
+ })
+}
 
 export const index = ({ querymen: { query, select, cursor } }, res, next) =>
   Pedido.count(query)
