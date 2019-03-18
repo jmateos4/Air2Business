@@ -12,9 +12,11 @@ import android.widget.TextView;
 
 import com.jmc.air2bussiness.R;
 import com.jmc.air2bussiness.fragment.ProductoFragment;
+import com.jmc.air2bussiness.fragment.UserFragment;
 import com.jmc.air2bussiness.listener.ProductosInteractionListener;
+import com.jmc.air2bussiness.listener.ProfileInteractionListener;
 
-public class NavigationActivity extends AppCompatActivity implements ProductosInteractionListener {
+public class NavigationActivity extends AppCompatActivity implements ProductosInteractionListener, ProfileInteractionListener {
 
   private TextView mTextMessage;
 
@@ -36,7 +38,10 @@ public class NavigationActivity extends AppCompatActivity implements ProductosIn
          // f = new DashboardFragment();
           break;
         case R.id.navigation_profile:
-          //f = new NotificationsFragment();
+          getSupportFragmentManager()
+                  .beginTransaction()
+                  .replace(R.id.contenedor, new UserFragment())
+                  .commit();
           break;
       }
 

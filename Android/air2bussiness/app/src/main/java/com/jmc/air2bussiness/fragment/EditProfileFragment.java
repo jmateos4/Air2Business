@@ -1,0 +1,128 @@
+package com.jmc.air2bussiness.fragment;
+
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
+import android.net.Uri;
+import android.os.Bundle;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.jmc.air2bussiness.R;
+import com.jmc.air2bussiness.UtilToken;
+import com.jmc.air2bussiness.listener.ProfileInteractionListener;
+import com.jmc.air2bussiness.retrofit.generator.ServiceGenerator;
+import com.jmc.air2bussiness.retrofit.generator.TipoAutenticacion;
+import com.jmc.air2bussiness.retrofit.services.UserService;
+
+import java.io.BufferedInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
+
+import okhttp3.MediaType;
+import okhttp3.MultipartBody;
+import okhttp3.RequestBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+
+public class EditProfileFragment extends DialogFragment {
+
+    private static final String ARG_ID_USUARIO = "idUser";
+    private int idEditProfile;
+    private EditText etNombre, etEmail, etTelefono;
+    Context ctx;
+
+
+    private ProfileInteractionListener mListener;
+
+    public EditProfileFragment() {
+        // Required empty public constructor
+    }
+
+
+    public static EditProfileFragment newInstance(String idUsuario) {
+        EditProfileFragment fragment = new EditProfileFragment();
+        Bundle args = new Bundle();
+        args.putString(ARG_ID_USUARIO, idUsuario);
+        fragment.setArguments(args);
+        return fragment;
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        if (getArguments() != null) {
+            idEditProfile = getArguments().getInt(ARG_ID_USUARIO);
+        }
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_edit_profile, container, false);
+    }
+
+    public Dialog onCreateDialog(Bundle savedInstanceState) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+
+
+        builder.setTitle("Añadir Huerto");
+        builder.setMessage("")
+                .setPositiveButton("Guardar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        final UserService service = ServiceGenerator.createService(UserService.class,
+                                UtilToken.getToken(ctx), TipoAutenticacion.JWT);
+
+
+                    }
+                })
+                .setNegativeButton("Cancelar", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+
+                    }
+                });
+
+        LayoutInflater inflater = getActivity().getLayoutInflater();
+        View v = inflater.inflate(R.layout.fragment_edit_profile, null);
+
+        etNombre = v.findViewById(R.id.editNombreEmpresa);
+        etEmail = v.findViewById(R.id.editEmailEmpresa);
+        etTelefono = v.findViewById(R.id.editTelefonoEmpresa);
+
+
+
+        // Llamaría a Retrofit con el idUsuario que he recibido
+        // y en el método onResponse de Retrofit tendría que poner
+        // todas las líneas de código que vienen a continuación
+
+        builder.setView(v);
+        // Create the AlertDialog object and return it
+        return builder.create();
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        ctx = context;
+        super.onAttach(context);
+        this.ctx = context;
+    }
+
+    @Override
+    public void onDetach() {
+        super.onDetach();
+        mListener = null;
+    }
+
+}

@@ -14,7 +14,7 @@
     <activity
       android:name=".ui.NavigationActivity"
       android:label="@string/title_activity_navigation"
-        android:theme="@style/AppTheme.NoActionBar"></activity>
+        android:theme="@style/AppTheme.ColorBar"></activity>
     <activity
       android:name=".ui.RegistroActivity"
       android:theme="@style/AppTheme.NoActionBar" />
