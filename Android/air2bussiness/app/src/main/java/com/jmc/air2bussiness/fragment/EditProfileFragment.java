@@ -10,11 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.jmc.air2bussiness.R;
 import com.jmc.air2bussiness.UtilToken;
 import com.jmc.air2bussiness.listener.ProfileInteractionListener;
+import com.jmc.air2bussiness.model.EditUserDTO;
 import com.jmc.air2bussiness.response.UserResponse;
 import com.jmc.air2bussiness.retrofit.generator.ServiceGenerator;
 import com.jmc.air2bussiness.retrofit.generator.TipoAutenticacion;
@@ -30,6 +32,7 @@ public class EditProfileFragment extends DialogFragment {
     private static final String ARG_ID_USUARIO = "idUser";
     private int idEditProfile;
     private EditText etNombre, etEmail, etTelefono;
+    private EditText editNombre, editEmail, editTelefono;
     Context ctx;
 
 
@@ -85,29 +88,35 @@ public class EditProfileFragment extends DialogFragment {
             }
         });
 
+        final EditUserDTO edited = new EditUserDTO();
+
+
+
+
+
         builder.setMessage("")
                 .setTitle("Editar Datos Personales")
                 .setPositiveButton("Guardar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
+                        edited.setName(etNombre.getText().toString());
+                        edited.setEmail(etEmail.getText().toString());
+                        edited.setTelefono(etTelefono.getText().toString());
                         UserService service = ServiceGenerator.createService(UserService.class, UtilToken.getToken(ctx) , TipoAutenticacion.JWT);
-                        Call<UserResponse> call = service.editMyself(UtilToken.getIdUser(ctx));
+                        Call<UserResponse> call = service.editMyself(UtilToken.getIdUser(ctx), edited);
 
                         call.enqueue(new Callback<UserResponse>() {
                             @Override
                             public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
                                 if(response.isSuccessful()){
+                                    Toast.makeText(ctx, "Exito", Toast.LENGTH_SHORT).show();
 
 
-                                    etNombre.setText(response.body().getNombre());
-                                    etEmail.setText(response.body().getEmail().toString());
-                                    etTelefono.setText(response.body().getTelefono().toString());
                                 }
                             }
 
-
                             @Override
                             public void onFailure(Call<UserResponse> call, Throwable t) {
-
+                                Toast.makeText(ctx, "Error", Toast.LENGTH_SHORT).show();
                             }
                         });
 
@@ -130,6 +139,8 @@ public class EditProfileFragment extends DialogFragment {
         builder.setView(v);
         return builder.create();
     }
+
+
 
     @Override
     public void onAttach(Context context) {
