@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 
+import com.bumptech.glide.Glide;
 import com.jmc.air2bussiness.R;
 import com.jmc.air2bussiness.UtilToken;
 import com.jmc.air2bussiness.listener.ProfileInteractionListener;
@@ -88,9 +89,27 @@ public class EditProfileFragment extends DialogFragment {
                 .setTitle("Editar Datos Personales")
                 .setPositiveButton("Guardar", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        final UserService service = ServiceGenerator.createService(UserService.class,
-                                UtilToken.getToken(ctx), TipoAutenticacion.JWT);
+                        UserService service = ServiceGenerator.createService(UserService.class, UtilToken.getToken(ctx) , TipoAutenticacion.JWT);
+                        Call<UserResponse> call = service.editMyself(UtilToken.getIdUser(ctx));
 
+                        call.enqueue(new Callback<UserResponse>() {
+                            @Override
+                            public void onResponse(Call<UserResponse> call, Response<UserResponse> response) {
+                                if(response.isSuccessful()){
+
+
+                                    etNombre.setText(response.body().getNombre());
+                                    etEmail.setText(response.body().getEmail().toString());
+                                    etTelefono.setText(response.body().getTelefono().toString());
+                                }
+                            }
+
+
+                            @Override
+                            public void onFailure(Call<UserResponse> call, Throwable t) {
+
+                            }
+                        });
 
 
                     }

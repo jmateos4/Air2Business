@@ -93,9 +93,9 @@ public class UserFragment extends Fragment {
                             .load(response.body().getPicture())
                             .into(imageProfile);
 
-                    tvNombre.setText(response.body().getNombre());
-                    tvEmail.setText(response.body().getEmail());
-                    tvTelefono.setText(response.body().getTelefono());
+                    tvNombre.setText("Nombre: "+ response.body().getNombre());
+                    tvEmail.setText("Email: "+ response.body().getEmail());
+                    tvTelefono.setText("Telefono: " + response.body().getTelefono());
                     idUser=response.body().getId();
                 }
             }

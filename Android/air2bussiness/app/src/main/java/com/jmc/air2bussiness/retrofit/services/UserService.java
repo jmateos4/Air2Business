@@ -13,4 +13,7 @@ public interface UserService {
     @GET("users/me")
     Call<UserResponse> myself();
 
+    @PUT("users/{id}")
+    Call<UserResponse> editMyself(@Path("id") String id);
+
 }
