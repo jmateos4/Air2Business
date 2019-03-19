@@ -6,7 +6,7 @@ const lineapedidoSchema = new Schema({
       ref: 'Producto',
   },
   cantidad: {
-    type: String
+    type: Number
   }
 }, {
   timestamps: true,

@@ -34,6 +34,9 @@ const userSchema = new Schema({
     type: String,
     trim: true
   },
+  telefono: {
+    type: String
+  },
   pedidos: [{
     type: Schema.ObjectId,
     ref: 'Pedido',
@@ -70,10 +73,10 @@ userSchema.pre('save', function (next) {
 userSchema.methods = {
   view (full) {
     let view = {}
-    let fields = ['id', 'name', 'picture']
+    let fields = ['id', 'name', 'picture', 'email', 'telefono']
 
     if (full) {
-      fields = [...fields, 'role', 'email', 'createdAt']
+      fields = [...fields, 'role', 'email','telefono', 'createdAt']
     }
 
     fields.forEach((field) => { view[field] = this[field] })
