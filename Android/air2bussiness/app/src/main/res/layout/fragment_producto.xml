@@ -4,90 +4,169 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/cardView"
     android:layout_width="match_parent"
-    android:layout_height="150dp"
-    android:layout_margin="8dp"
-    android:layout_marginBottom="1dp"
+    android:layout_height="250dp"
+    android:layout_marginStart="0dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="0dp"
+    android:layout_marginBottom="8dp"
     android:orientation="horizontal"
-    app:cardCornerRadius="0dp">
+    android:padding="4dp"
+    app:cardCornerRadius="4dp">
 
     <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+
         <ImageView
-            android:id="@+id/imageProd"
-            android:layout_width="120dp"
-            android:layout_height="145dp"
-            android:layout_marginStart="2dp"
-            android:layout_marginTop="2dp"
-            android:layout_marginBottom="2dp"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:id="@+id/barra1"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@color/bluedark" />
+
+        <TextView
+            android:id="@+id/textTitleProducto2"
+            android:layout_width="0dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Distribuidor"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/textDistribuidor"
+            app:layout_constraintStart_toStartOf="@+id/textDistribuidor"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/Distribuidor" />
+
+        <ImageView
+            android:id="@+id/imageProd"
+            android:layout_width="0dp"
+            android:layout_height="125dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="1dp"
+            app:layout_constraintBottom_toTopOf="@+id/barra2"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barra1"
             tools:srcCompat="@tools:sample/avatars" />
 
         <TextView
             android:id="@+id/textNombre"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginLeft="16dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_width="140dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginBottom="8dp"
             android:text="Nombre Producto"
-            app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
-            app:layout_constraintStart_toEndOf="@+id/imageProd"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/barra1"
+            app:layout_constraintStart_toStartOf="@+id/barra1" />
 
         <TextView
-            android:id="@+id/textCodRef"
+            android:id="@+id/textTituloCodRef"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="17dp"
+            android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
-            android:text="Cod.Referencia"
-            app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
-            app:layout_constraintStart_toStartOf="@+id/textNombre"
-            app:layout_constraintTop_toBottomOf="@+id/textNombre" />
+            android:text="Codigo de Referencia: "
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/imageProd"
+            app:layout_constraintTop_toBottomOf="@+id/imageProd" />
 
         <TextView
             android:id="@+id/textDimensiones"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
             android:text="Dimensiones"
-            app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
-            app:layout_constraintStart_toStartOf="@+id/textCodRef"
-            app:layout_constraintTop_toBottomOf="@+id/textCodRef" />
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/buttonAddProducto"
+            app:layout_constraintStart_toEndOf="@+id/textTitleDimensiones"
+            app:layout_constraintTop_toTopOf="@+id/textTitleDimensiones" />
 
         <TextView
             android:id="@+id/textDistribuidor"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
             android:text="Nombre Distribuidor"
-            app:layout_constraintEnd_toStartOf="@+id/floatingActionButton"
-            app:layout_constraintStart_toStartOf="@+id/textDimensiones"
-            app:layout_constraintTop_toBottomOf="@+id/textDimensiones" />
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textNombre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/textNombre"
+            app:layout_constraintTop_toTopOf="@+id/textNombre" />
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/floatingActionButton"
+        <ImageButton
+            android:id="@+id/buttonAddProducto"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
             android:layout_marginBottom="8dp"
-            android:clickable="true"
+            android:background="@android:color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@drawable/ic_action_addnewbutton" />
+
+        <TextView
+            android:id="@+id/textTitleProducto"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Producto"
+            android:textAlignment="center"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/textDistribuidor"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@android:drawable/ic_input_add" />
+            tools:text="@string/Producto" />
+
+        <TextView
+            android:id="@+id/textCodRef"
+            android:layout_width="0dp"
+            android:layout_height="17dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="Codigo de Referencia"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="@+id/textDimensiones"
+            app:layout_constraintStart_toEndOf="@+id/textTituloCodRef"
+            app:layout_constraintTop_toTopOf="@+id/textTituloCodRef" />
+
+        <TextView
+            android:id="@+id/textTitleDimensiones"
+            android:layout_width="wrap_content"
+            android:layout_height="17dp"
+            android:layout_marginTop="12dp"
+            android:text="Dimensiones: "
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@+id/textTituloCodRef"
+            app:layout_constraintTop_toBottomOf="@+id/textTituloCodRef"
+            tools:text="@string/Dimensiones" />
+
+        <ImageView
+            android:id="@+id/barra2"
+            android:layout_width="0dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageProd"
+            app:srcCompat="@color/bluedark" />
+
     </android.support.constraint.ConstraintLayout>
 </android.support.v7.widget.CardView>

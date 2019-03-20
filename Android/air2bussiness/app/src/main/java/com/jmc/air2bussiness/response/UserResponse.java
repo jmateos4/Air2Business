@@ -3,7 +3,9 @@ package com.jmc.air2bussiness.response;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
-public class UserResponse {
+import java.io.Serializable;
+
+public class UserResponse implements Serializable {
     @SerializedName("id")
     @Expose
     private String id;
