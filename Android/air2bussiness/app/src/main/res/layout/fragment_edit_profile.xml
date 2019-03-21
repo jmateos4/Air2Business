@@ -22,7 +22,8 @@
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/editname" />
 
         <EditText
             android:id="@+id/editEmailEmpresa"
@@ -34,7 +35,8 @@
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="@+id/editNombreEmpresa"
             app:layout_constraintStart_toStartOf="@+id/editNombreEmpresa"
-            app:layout_constraintTop_toBottomOf="@+id/editNombreEmpresa" />
+            app:layout_constraintTop_toBottomOf="@+id/editNombreEmpresa"
+            tools:text="@string/editemail" />
 
         <EditText
             android:id="@+id/editTelefonoEmpresa"
@@ -46,6 +48,7 @@
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="@+id/editEmailEmpresa"
             app:layout_constraintStart_toStartOf="@+id/editEmailEmpresa"
-            app:layout_constraintTop_toBottomOf="@+id/editEmailEmpresa" />
+            app:layout_constraintTop_toBottomOf="@+id/editEmailEmpresa"
+            tools:text="@string/editphone" />
     </android.support.constraint.ConstraintLayout>
 </FrameLayout>

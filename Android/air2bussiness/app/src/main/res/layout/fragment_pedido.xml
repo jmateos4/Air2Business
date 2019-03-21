@@ -58,7 +58,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/imageDecorator"
             app:layout_constraintEnd_toEndOf="@+id/imageDecorator"
             app:layout_constraintStart_toStartOf="@+id/imageDecorator"
-            app:layout_constraintTop_toTopOf="@+id/imageDecorator" />
+            app:layout_constraintTop_toTopOf="@+id/imageDecorator"
+            tools:text="@string/orderstatus" />
 
         <TextView
             android:id="@+id/textIdPedido"
@@ -72,7 +73,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/barra1"
             app:layout_constraintEnd_toStartOf="@+id/imageDecorator"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/barra1" />
+            app:layout_constraintTop_toTopOf="@+id/barra1"
+            tools:text="@string/orderid" />
 
         <TextView
             android:id="@+id/textFirstLineaPedido"
@@ -85,7 +87,8 @@
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/barra1" />
+            app:layout_constraintTop_toBottomOf="@+id/barra1"
+            tools:text="@string/id_order_string" />
 
         <TextView
             android:id="@+id/textDistribuidorPedido"
@@ -97,7 +100,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/imageDecorator2"
             app:layout_constraintEnd_toEndOf="@+id/imageDecorator2"
             app:layout_constraintStart_toStartOf="@+id/imageDecorator2"
-            app:layout_constraintTop_toTopOf="@+id/imageDecorator2" />
+            app:layout_constraintTop_toTopOf="@+id/imageDecorator2"
+            tools:text="@string/Distribuidor" />
 
         <TextView
             android:id="@+id/textCantidad"
@@ -110,7 +114,8 @@
             android:textSize="12sp"
             app:layout_constraintEnd_toStartOf="@+id/imageDecorator2"
             app:layout_constraintStart_toStartOf="@+id/textNombreProductoLinea"
-            app:layout_constraintTop_toBottomOf="@+id/textNombreProductoLinea" />
+            app:layout_constraintTop_toBottomOf="@+id/textNombreProductoLinea"
+            tools:text="@string/amount" />
 
         <TextView
             android:id="@+id/textNombreProductoLinea"
@@ -121,7 +126,8 @@
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="@+id/textFirstLineaPedido"
             app:layout_constraintStart_toStartOf="@+id/textFirstLineaPedido"
-            app:layout_constraintTop_toBottomOf="@+id/textFirstLineaPedido" />
+            app:layout_constraintTop_toBottomOf="@+id/textFirstLineaPedido"
+            tools:text="@string/detailproductname" />
 
     </android.support.constraint.ConstraintLayout>
 

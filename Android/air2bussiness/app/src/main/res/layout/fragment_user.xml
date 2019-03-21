@@ -37,7 +37,8 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/imageProfile"
             app:layout_constraintStart_toStartOf="@+id/imageProfile"
-            app:layout_constraintTop_toBottomOf="@+id/imageProfile" />
+            app:layout_constraintTop_toBottomOf="@+id/imageProfile"
+            tools:text="@string/editname" />
 
         <TextView
             android:id="@+id/textEmailEmpresa"
@@ -50,7 +51,8 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/textNombreEmpresa"
             app:layout_constraintStart_toStartOf="@+id/textNombreEmpresa"
-            app:layout_constraintTop_toBottomOf="@+id/textNombreEmpresa" />
+            app:layout_constraintTop_toBottomOf="@+id/textNombreEmpresa"
+            tools:text="@string/editemail" />
 
         <Button
             android:id="@+id/buttonEditProfile"
@@ -75,7 +77,8 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/textEmailEmpresa"
             app:layout_constraintStart_toStartOf="@+id/textEmailEmpresa"
-            app:layout_constraintTop_toBottomOf="@+id/textEmailEmpresa" />
+            app:layout_constraintTop_toBottomOf="@+id/textEmailEmpresa"
+            tools:text="@string/editphone" />
     </android.support.constraint.ConstraintLayout>
 
 

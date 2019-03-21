@@ -55,7 +55,8 @@
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/barra1"
             app:layout_constraintStart_toStartOf="@+id/barra1"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="@string/detailproductname" />
 
         <TextView
             android:id="@+id/textTituloCodRef"
@@ -63,7 +64,7 @@
             android:layout_height="17dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="16dp"
-            android:text="Codigo de Referencia: "
+            android:text="@string/detailcodref"
             android:textSize="12sp"
             app:layout_constraintStart_toStartOf="@+id/imageProd"
             app:layout_constraintTop_toBottomOf="@+id/imageProd" />
@@ -74,11 +75,12 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:text="Dimensiones"
+            android:text="@string/detailsizeproduct"
             android:textSize="12sp"
             app:layout_constraintEnd_toStartOf="@+id/buttonAddProducto"
             app:layout_constraintStart_toEndOf="@+id/textTitleDimensiones"
-            app:layout_constraintTop_toTopOf="@+id/textTitleDimensiones" />
+            app:layout_constraintTop_toTopOf="@+id/textTitleDimensiones"
+            tools:text="@string/detailsizeproduct" />
 
         <TextView
             android:id="@+id/textDistribuidor"
@@ -93,7 +95,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/textNombre"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/textNombre"
-            app:layout_constraintTop_toTopOf="@+id/textNombre" />
+            app:layout_constraintTop_toTopOf="@+id/textNombre"
+            tools:text="@string/distributordetailname" />
 
         <ImageButton
             android:id="@+id/buttonAddProducto"
@@ -112,7 +115,7 @@
             android:layout_height="17dp"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="8dp"
-            android:text="Codigo de Referencia"
+            android:text="@string/detailcodref"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="@+id/textDimensiones"
             app:layout_constraintStart_toEndOf="@+id/textTituloCodRef"

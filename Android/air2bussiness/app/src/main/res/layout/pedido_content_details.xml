@@ -43,7 +43,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/imageView3"
             app:layout_constraintEnd_toEndOf="@+id/imageView3"
             app:layout_constraintStart_toStartOf="@+id/imageView3"
-            app:layout_constraintTop_toTopOf="@+id/imageView3" />
+            app:layout_constraintTop_toTopOf="@+id/imageView3"
+            tools:text="@string/orderstatus" />
 
         <TextView
             android:id="@+id/textDetailIdPedido"
@@ -55,7 +56,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/detailBackground1"
             app:layout_constraintEnd_toEndOf="@+id/detailBackground1"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/detailBackground1" />
+            app:layout_constraintTop_toTopOf="@+id/detailBackground1"
+            tools:text="@string/id_order" />
 
         <TextView
             android:id="@+id/textDetailIdLinea"
@@ -66,7 +68,8 @@
             android:text="ID Linea Producto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/imageView3"
-            app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+            app:layout_constraintTop_toBottomOf="@+id/imageView3"
+            tools:text="@string/id_order_string" />
 
         <TextView
             android:id="@+id/textDetailNombreProducto"
@@ -77,7 +80,8 @@
             android:text="Nombre Producto"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textDetailIdLinea"
-            app:layout_constraintTop_toBottomOf="@+id/textDetailIdLinea" />
+            app:layout_constraintTop_toBottomOf="@+id/textDetailIdLinea"
+            tools:text="@string/detailproductname" />
 
         <TextView
             android:id="@+id/textDetailCantidad"
@@ -88,7 +92,8 @@
             android:text="Cantidad"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textDetailNombreProducto"
-            app:layout_constraintTop_toBottomOf="@+id/textDetailNombreProducto" />
+            app:layout_constraintTop_toBottomOf="@+id/textDetailNombreProducto"
+            tools:text="@string/amount" />
 
         <TextView
             android:id="@+id/textDetailDistribuidorPedido"
@@ -100,7 +105,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/textDetailCantidad"
             app:layout_constraintStart_toStartOf="@+id/textDetailCantidad"
-            app:layout_constraintTop_toBottomOf="@+id/textDetailCantidad" />
+            app:layout_constraintTop_toBottomOf="@+id/textDetailCantidad"
+            tools:text="@string/distributordetailname" />
 
     </android.support.constraint.ConstraintLayout>
 </android.support.v4.widget.NestedScrollView>

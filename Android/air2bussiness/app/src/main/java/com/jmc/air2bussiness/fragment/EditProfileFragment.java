@@ -32,7 +32,6 @@ public class EditProfileFragment extends DialogFragment {
     private static final String ARG_ID_USUARIO = "idUser";
     private int idEditProfile;
     private EditText etNombre, etEmail, etTelefono;
-    private EditText editNombre, editEmail, editTelefono;
     Context ctx;
 
 

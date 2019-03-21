@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">air2bussiness</string>
+    <string name="app_name">Air 2 Business</string>
     <!-- Preferencias -->
     <string name="sharedpreferences_filename">login</string>
     <string name="jwt_key">JWT_KEY</string>
@@ -122,4 +122,18 @@
     </string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_product_detail">ProductDetailActivity</string>
+    <string name="detailproductname">Nombre del producto</string>
+    <string name="distributordetailname">Nombre del distribuidor</string>
+    <string name="detailcodref">Codigo de Referencia</string>
+    <string name="detaildescriptionproduct">Descripcion del producto</string>
+    <string name="detailsizeproduct">DImensiones del Producto</string>
+    <string name="detailcategoryname">Categoria</string>
+    <string name="editname">Nombre de la Empresa</string>
+    <string name="editemail">Email de la Empresa</string>
+    <string name="editphone">Telefono de la Empresa</string>
+    <string name="orderstatus">Estado Pedido</string>
+    <string name="orderid">Id Pedido</string>
+    <string name="id_order_string">ID Linea Pedido</string>
+    <string name="amount">Cantidad</string>
+    <string name="id_order">ID Pedido</string>
 </resources>

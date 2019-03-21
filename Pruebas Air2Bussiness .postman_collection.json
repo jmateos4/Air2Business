@@ -15,13 +15,13 @@
 							"type": "basic",
 							"basic": [
 								{
-									"key": "password",
-									"value": "12345678",
+									"key": "username",
+									"value": "user@user.com",
 									"type": "string"
 								},
 								{
-									"key": "username",
-									"value": "admin@admin.com",
+									"key": "password",
+									"value": "12345678",
 									"type": "string"
 								}
 							]
@@ -33,9 +33,9 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{url}}/auth?access_token={{access_token}}",
+							"raw": "{{urlL}}/auth?access_token={{access_token}}",
 							"host": [
-								"{{url}}"
+								"{{urlL}}"
 							],
 							"path": [
 								"auth"
@@ -78,6 +78,49 @@
 					"response": []
 				},
 				{
+					"name": "GET OneUser",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "password",
+									"value": "12345678",
+									"type": "string"
+								},
+								{
+									"key": "username",
+									"value": "prueba4@prueba.com",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/users/me?access_token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGY4OTc0MGI0ZGU5MmQ2NmNiYzY2MyIsImlhdCI6MTU1MjkxMDcwOH0.DWQqfi0vWugsUJI6jV92h9fOp5_6fc5Kb18wpWx-5f8",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"users",
+								"me"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjOGY4OTc0MGI0ZGU5MmQ2NmNiYzY2MyIsImlhdCI6MTU1MjkxMDcwOH0.DWQqfi0vWugsUJI6jV92h9fOp5_6fc5Kb18wpWx-5f8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Registro",
 					"request": {
 						"method": "POST",
@@ -91,12 +134,12 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"access_token\": \"2ASUdJE0bhSCDs7h9Z96BDoeQ7MGBPuk\",\n\t\"email\": \"prueba@prueba.com\",\n\t\"password\": \"12345678\",\n\t\"role\": \"user\"\n}"
+							"raw": "{\n\t\"access_token\": \"2ASUdJE0bhSCDs7h9Z96BDoeQ7MGBPuk\",\n\t\"email\": \"prueba4@prueba.com\",\n\t\"password\": \"12345678\",\n\t\"telefono\": \"prueba4\",\n\t\"role\": \"user\"\n}"
 						},
 						"url": {
-							"raw": "{{url}}/users",
+							"raw": "{{urlL}}/users",
 							"host": [
-								"{{url}}"
+								"{{urlL}}"
 							],
 							"path": [
 								"users"
@@ -109,19 +152,421 @@
 		},
 		{
 			"name": "Productos",
-			"item": []
+			"item": [
+				{
+					"name": "GET Productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{urlL}}/productos/?access_token={{usertokenPrueba}}",
+							"host": [
+								"{{urlL}}"
+							],
+							"path": [
+								"productos",
+								""
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{usertokenPrueba}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Productos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "foto",
+									"type": "file",
+									"src": ""
+								},
+								{
+									"key": "nombre",
+									"value": "Correa",
+									"type": "text"
+								},
+								{
+									"key": "codReferencia",
+									"value": "59127512",
+									"type": "text"
+								},
+								{
+									"key": "descripcion",
+									"value": "Correa HAS de traccion 8",
+									"type": "text"
+								},
+								{
+									"key": "dimensiones",
+									"value": "3m x 60mm",
+									"type": "text"
+								},
+								{
+									"key": "distribuidor",
+									"value": "5c8a1d524b8399345d1bfbd1",
+									"type": "text"
+								},
+								{
+									"key": "categoria",
+									"value": "5c88fff7551c6100224c4cc3",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{urlL}}/productos?access_token={{usertokenPrueba}}",
+							"host": [
+								"{{urlL}}"
+							],
+							"path": [
+								"productos"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{usertokenPrueba}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Productos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{urlL}}/productos/5c8ba6dedf53930022266329?access_token={{usertokenPrueba}}",
+							"host": [
+								"{{urlL}}"
+							],
+							"path": [
+								"productos",
+								"5c8ba6dedf53930022266329"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{usertokenPrueba}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET One Productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{url}}/productos/5c8e6efe1d8d040022a9b1cd?access_token={{usertokenPrueba}}",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"productos",
+								"5c8e6efe1d8d040022a9b1cd"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{usertokenPrueba}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Distribuidores",
-			"item": []
+			"item": [
+				{
+					"name": "GET Distribuidores",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{urlL}}/distribuidores?access_token={{usertokenPrueba}}",
+							"host": [
+								"{{urlL}}"
+							],
+							"path": [
+								"distribuidores"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{usertokenPrueba}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Distribuidores",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nombre\": \"Reparaciones Centeno\",\n\t\"email\": \"reparacionescenteno@gmail.com\",\n\t\"direccion\": \"Poligono Industrial Sevilla, 12\",\n\t\"telefono\": \"955895933\"\n}"
+						},
+						"url": {
+							"raw": "{{urlL}}/distribuidores?access_token={{usertokenPrueba}}",
+							"host": [
+								"{{urlL}}"
+							],
+							"path": [
+								"distribuidores"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{usertokenPrueba}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Pedidos",
-			"item": []
+			"item": [
+				{
+					"name": "GET Pedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{urlL}}/pedidos?access_token={{usertokenPrueba}}",
+							"host": [
+								"{{urlL}}"
+							],
+							"path": [
+								"pedidos"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{usertokenPrueba}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Linea Pedido",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{urlL}}/lineapedidos?access_token={{usertokenPrueba}}",
+							"host": [
+								"{{urlL}}"
+							],
+							"path": [
+								"lineapedidos"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{usertokenPrueba}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Pedidos",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"lineaspedido\": \"5c93384f7c313312e1a17ef4\",\n\t\"estadopedido\": \"incompleto\",\n\t\"distribuidor\": \"\",\n\t\"empresa\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{urlL}}/pedidos?access_token={{usertokenPrueba}}",
+							"host": [
+								"{{urlL}}"
+							],
+							"path": [
+								"pedidos"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{usertokenPrueba}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Linea Pedido",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"producto\": \"\",\n\t\"cantidad\": \"\"\n}"
+						},
+						"url": {
+							"raw": "{{urlL}}/lineapedidos?access_token={{usertokenPrueba}}",
+							"host": [
+								"{{urlL}}"
+							],
+							"path": [
+								"lineapedidos"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{usertokenPrueba}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		},
 		{
 			"name": "Categorias",
-			"item": []
+			"item": [
+				{
+					"name": "GET Categorias",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{urlL}}/categorias?access_token={{usertokenPrueba}}",
+							"host": [
+								"{{urlL}}"
+							],
+							"path": [
+								"categorias"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{usertokenPrueba}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Categorias",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"nombre\": \"Tornillos\"\n}"
+						},
+						"url": {
+							"raw": "{{urlL}}/categorias?access_token={{usertokenPrueba}}",
+							"host": [
+								"{{urlL}}"
+							],
+							"path": [
+								"categorias"
+							],
+							"query": [
+								{
+									"key": "access_token",
+									"value": "{{usertokenPrueba}}"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
 		}
 	]
 }

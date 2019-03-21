@@ -35,7 +35,8 @@
             android:text="TextView"
             app:layout_constraintEnd_toStartOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/details_photo" />
+            app:layout_constraintTop_toBottomOf="@+id/details_photo"
+            tools:text="@string/detailproductname" />
 
         <TextView
             android:id="@+id/textDetailDistribuidor"
@@ -44,7 +45,8 @@
             android:layout_marginTop="24dp"
             android:text="TextView"
             app:layout_constraintStart_toStartOf="@+id/textDetailNombre"
-            app:layout_constraintTop_toBottomOf="@+id/textDetailNombre" />
+            app:layout_constraintTop_toBottomOf="@+id/textDetailNombre"
+            tools:text="@string/distributordetailname" />
 
         <TextView
             android:id="@+id/textDetailCodRef"
@@ -53,7 +55,8 @@
             android:layout_marginTop="24dp"
             android:text="TextView"
             app:layout_constraintStart_toStartOf="@+id/textDetailDistribuidor"
-            app:layout_constraintTop_toBottomOf="@+id/textDetailDistribuidor" />
+            app:layout_constraintTop_toBottomOf="@+id/textDetailDistribuidor"
+            tools:text="@string/detailcodref" />
 
         <TextView
             android:id="@+id/textDetailDescripcion"
@@ -62,7 +65,8 @@
             android:layout_marginTop="24dp"
             android:text="TextView"
             app:layout_constraintStart_toStartOf="@+id/textDetailCodRef"
-            app:layout_constraintTop_toBottomOf="@+id/textDetailCodRef" />
+            app:layout_constraintTop_toBottomOf="@+id/textDetailCodRef"
+            tools:text="@string/detaildescriptionproduct" />
 
         <TextView
             android:id="@+id/textDetailDimensiones"
@@ -73,7 +77,8 @@
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textDetailDescripcion"
-            app:layout_constraintTop_toBottomOf="@+id/textDetailDescripcion" />
+            app:layout_constraintTop_toBottomOf="@+id/textDetailDescripcion"
+            tools:text="@string/detailsizeproduct" />
 
         <ImageView
             android:id="@+id/imageView"
@@ -94,7 +99,8 @@
             app:layout_constraintBottom_toBottomOf="@+id/imageView"
             app:layout_constraintEnd_toEndOf="@+id/imageView"
             app:layout_constraintStart_toStartOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
+            app:layout_constraintTop_toTopOf="@+id/imageView"
+            tools:text="@string/detailcategoryname" />
 
 
     </android.support.constraint.ConstraintLayout>

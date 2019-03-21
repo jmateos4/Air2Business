@@ -11,9 +11,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.target.SimpleTarget;
@@ -77,6 +77,16 @@ public class MyProductoRecyclerViewAdapter extends RecyclerView.Adapter<MyProduc
                 });
 
         holder.itemView.setTag(mValues.get(position));
+
+
+        holder.btnAdd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                
+            }
+        });
+
+
         holder.constraint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -101,7 +111,10 @@ public class MyProductoRecyclerViewAdapter extends RecyclerView.Adapter<MyProduc
                 });
             }
         });
+
+
     }
+
 
     @Override
     public int getItemCount() {
@@ -115,11 +128,11 @@ public class MyProductoRecyclerViewAdapter extends RecyclerView.Adapter<MyProduc
         public final TextView mDimensiones;
         public final TextView mDistribuidor;
         public final ImageView mPhoto;
+        public final ImageButton btnAdd;
         public  final ConstraintLayout constraint;
 
 
         public ProductoResponse mItem;
-
         public ViewHolder(View view) {
             super(view);
             mView = view;
@@ -128,6 +141,7 @@ public class MyProductoRecyclerViewAdapter extends RecyclerView.Adapter<MyProduc
             mCodRef = view.findViewById(R.id.textCodRef);
             mDimensiones = view.findViewById(R.id.textDimensiones);
             mDistribuidor = view.findViewById(R.id.textDistribuidor);
+            btnAdd = view.findViewById(R.id.buttonAddProducto);
             constraint = view.findViewById(R.id.constraint);
 
 

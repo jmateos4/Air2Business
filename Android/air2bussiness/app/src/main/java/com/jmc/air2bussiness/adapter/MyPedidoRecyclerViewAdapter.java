@@ -85,7 +85,11 @@ public class MyPedidoRecyclerViewAdapter extends RecyclerView.Adapter<MyPedidoRe
                 });
             }
         });
+
+
     }
+
+
 
     @Override
     public int getItemCount() {
@@ -114,6 +118,7 @@ public class MyPedidoRecyclerViewAdapter extends RecyclerView.Adapter<MyPedidoRe
             estadoPedido = view.findViewById(R.id.textEstadoPedido);
             constraint = view.findViewById(R.id.constraint);
             cantidad = view.findViewById(R.id.textCantidad);
+
             nombreProdLinea = view.findViewById(R.id.textNombreProductoLinea);
 
         }
