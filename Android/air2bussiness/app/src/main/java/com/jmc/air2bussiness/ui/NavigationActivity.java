@@ -11,12 +11,14 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 import com.jmc.air2bussiness.R;
+import com.jmc.air2bussiness.fragment.PedidoFragment;
 import com.jmc.air2bussiness.fragment.ProductoFragment;
 import com.jmc.air2bussiness.fragment.UserFragment;
+import com.jmc.air2bussiness.listener.PedidosInteractionListener;
 import com.jmc.air2bussiness.listener.ProductosInteractionListener;
 import com.jmc.air2bussiness.listener.ProfileInteractionListener;
 
-public class NavigationActivity extends AppCompatActivity implements ProductosInteractionListener, ProfileInteractionListener {
+public class NavigationActivity extends AppCompatActivity implements ProductosInteractionListener, ProfileInteractionListener , PedidosInteractionListener {
 
   private TextView mTextMessage;
 
@@ -35,7 +37,10 @@ public class NavigationActivity extends AppCompatActivity implements ProductosIn
                     .commit();
           break;
         case R.id.navigation_cart:
-         // f = new DashboardFragment();
+          getSupportFragmentManager()
+                  .beginTransaction()
+                  .replace(R.id.contenedor, new PedidoFragment())
+                  .commit();
           break;
         case R.id.navigation_profile:
           getSupportFragmentManager()

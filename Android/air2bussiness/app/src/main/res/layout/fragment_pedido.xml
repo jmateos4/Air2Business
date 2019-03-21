@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cardView"
+    android:layout_width="match_parent"
+    android:layout_height="175dp"
+    android:layout_marginStart="0dp"
+    android:layout_marginTop="8dp"
+    android:layout_marginEnd="0dp"
+    android:layout_marginBottom="16dp"
+    android:orientation="horizontal"
+    android:padding="4dp"
+    app:cardCornerRadius="4dp">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/barra1"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@color/bluedark" />
+
+        <ImageView
+            android:id="@+id/imageDecorator"
+            android:layout_width="125dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/barra1"
+            app:layout_constraintEnd_toEndOf="@+id/barra1"
+            app:layout_constraintTop_toTopOf="@+id/barra1"
+            app:srcCompat="@android:color/holo_orange_dark" />
+
+        <ImageView
+            android:id="@+id/imageDecorator2"
+            android:layout_width="150dp"
+            android:layout_height="30dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:srcCompat="@color/design_default_color_primary_dark" />
+
+        <TextView
+            android:id="@+id/textEstadoPedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Estado Pedido"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageDecorator"
+            app:layout_constraintEnd_toEndOf="@+id/imageDecorator"
+            app:layout_constraintStart_toStartOf="@+id/imageDecorator"
+            app:layout_constraintTop_toTopOf="@+id/imageDecorator" />
+
+        <TextView
+            android:id="@+id/textIdPedido"
+            android:layout_width="0dp"
+            android:layout_height="22dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="Id pedido"
+            android:textColor="@android:color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@+id/barra1"
+            app:layout_constraintEnd_toStartOf="@+id/imageDecorator"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/barra1" />
+
+        <TextView
+            android:id="@+id/textFirstLineaPedido"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="Linea Pedido 1"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/barra1" />
+
+        <TextView
+            android:id="@+id/textDistribuidorPedido"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Distribuidor"
+            android:textColor="@android:color/white"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageDecorator2"
+            app:layout_constraintEnd_toEndOf="@+id/imageDecorator2"
+            app:layout_constraintStart_toStartOf="@+id/imageDecorator2"
+            app:layout_constraintTop_toTopOf="@+id/imageDecorator2" />
+
+        <TextView
+            android:id="@+id/textCantidad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="Cantidad"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textNombreProductoLinea"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textNombreProductoLinea" />
+
+        <TextView
+            android:id="@+id/textNombreProductoLinea"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:text="NombreProducto"
+            android:textSize="12sp"
+            app:layout_constraintEnd_toStartOf="@+id/textCantidad"
+            app:layout_constraintStart_toStartOf="@+id/textFirstLineaPedido"
+            app:layout_constraintTop_toBottomOf="@+id/textFirstLineaPedido" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.v7.widget.CardView>

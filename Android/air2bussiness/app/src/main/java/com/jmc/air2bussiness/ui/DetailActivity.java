@@ -31,6 +31,7 @@ public class DetailActivity extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.content_details);
             Toolbar toolbar = findViewById(R.id.toolbar);
+
             jwt = UtilToken.getToken(DetailActivity.this);
             idUser = UtilToken.getToken(getApplicationContext());
             Intent i = getIntent();
@@ -55,12 +56,12 @@ public class DetailActivity extends AppCompatActivity {
         }
 
         public void setItems(){
-            tvNombre.setText(producto.getNombre());
+            tvNombre.setText("Nombre del producto: "+ producto.getNombre());
             tvCategoria.setText(producto.getCategoria().getNombre());
-            tvDistribuidor.setText(producto.getDistribuidor().getNombre());
-            tvCodRef.setText(producto.getCodReferencia());
-            tvDescripcion.setText(producto.getDescripcion());
-            tvDimensiones.setText(producto.getDimensiones());
+            tvDistribuidor.setText("Distribuidor del producto: " + producto.getDistribuidor().getNombre());
+            tvCodRef.setText("Codigo de referencia del producto: "+ producto.getCodReferencia());
+            tvDescripcion.setText("Descripcion del producto: " +producto.getDescripcion());
+            tvDimensiones.setText("Dimensiones del producto: " + producto.getDimensiones());
             Glide.with(this).load(producto.getFoto())
                     .centerInside()
                     .into(fotoP);

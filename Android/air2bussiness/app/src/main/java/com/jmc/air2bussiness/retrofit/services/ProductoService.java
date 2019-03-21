@@ -17,8 +17,5 @@ public interface ProductoService {
     @GET("productos/{id}")
     Call<ProductoResponse> oneProducto(@Path("id") String id);
 
-    @DELETE("productos/{id}")
-    Call<ResponseContainer<ProductoResponse>> deleteProducto(@Path("id") String id);
-
 
 }

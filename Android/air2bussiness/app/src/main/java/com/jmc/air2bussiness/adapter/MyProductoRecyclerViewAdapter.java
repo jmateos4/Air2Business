@@ -62,10 +62,10 @@ public class MyProductoRecyclerViewAdapter extends RecyclerView.Adapter<MyProduc
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mNombre.setText(mValues.get(position).getNombre());
+        holder.mNombre.setText("Producto: " + mValues.get(position).getNombre());
         holder.mCodRef.setText(mValues.get(position).getCodReferencia());
         holder.mDimensiones.setText(mValues.get(position).getDimensiones());
-        holder.mDistribuidor.setText(mValues.get(position).getDistribuidor().getNombre());
+        holder.mDistribuidor.setText("Distribuidor: " + mValues.get(position).getDistribuidor().getNombre());
         Glide
                 .with(ctx)
                 .load(mValues.get(position).getFoto())
