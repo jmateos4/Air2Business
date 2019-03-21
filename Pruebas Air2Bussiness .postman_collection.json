@@ -16,7 +16,7 @@
 							"basic": [
 								{
 									"key": "username",
-									"value": "user@user.com",
+									"value": "prueba4@prueba4.com",
 									"type": "string"
 								},
 								{
@@ -33,9 +33,9 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{urlL}}/auth?access_token={{access_token}}",
+							"raw": "{{url}}/auth?access_token={{access_token}}",
 							"host": [
-								"{{urlL}}"
+								"{{url}}"
 							],
 							"path": [
 								"auth"
@@ -134,12 +134,12 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"access_token\": \"2ASUdJE0bhSCDs7h9Z96BDoeQ7MGBPuk\",\n\t\"email\": \"prueba4@prueba.com\",\n\t\"password\": \"12345678\",\n\t\"telefono\": \"prueba4\",\n\t\"role\": \"user\"\n}"
+							"raw": "{\n\t\"access_token\": \"2ASUdJE0bhSCDs7h9Z96BDoeQ7MGBPuk\",\n\t\"email\": \"prueba4@prueba4.com\",\n\t\"password\": \"12345678\",\n\t\"telefono\": \"prueba4\",\n\t\"role\": \"user\"\n}"
 						},
 						"url": {
-							"raw": "{{urlL}}/users",
+							"raw": "{{url}}/users",
 							"host": [
-								"{{urlL}}"
+								"{{url}}"
 							],
 							"path": [
 								"users"
@@ -163,9 +163,9 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{urlL}}/productos/?access_token={{usertokenPrueba}}",
+							"raw": "{{url}}/productos/?access_token={{admintoken}}",
 							"host": [
-								"{{urlL}}"
+								"{{url}}"
 							],
 							"path": [
 								"productos",
@@ -174,7 +174,7 @@
 							"query": [
 								{
 									"key": "access_token",
-									"value": "{{usertokenPrueba}}"
+									"value": "{{admintoken}}"
 								}
 							]
 						}
@@ -388,12 +388,13 @@
 							"raw": ""
 						},
 						"url": {
-							"raw": "{{urlL}}/pedidos?access_token={{usertokenPrueba}}",
+							"raw": "{{url}}/pedidos/?access_token={{usertokenPrueba}}",
 							"host": [
-								"{{urlL}}"
+								"{{url}}"
 							],
 							"path": [
-								"pedidos"
+								"pedidos",
+								""
 							],
 							"query": [
 								{
@@ -446,7 +447,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"lineaspedido\": \"5c93384f7c313312e1a17ef4\",\n\t\"estadopedido\": \"incompleto\",\n\t\"distribuidor\": \"\",\n\t\"empresa\": \"\"\n}"
+							"raw": "{\n\t\"lineaspedido\": \"5c933bdab1d331174d6dabea\",\n\t\"estadopedido\": \"incompleto\",\n\t\"distribuidor\": \"5c8a0dd8ddb0d0002214835d\",\n\t\"empresa\": \"5c8f89740b4de92d66cbc663\"\n}"
 						},
 						"url": {
 							"raw": "{{urlL}}/pedidos?access_token={{usertokenPrueba}}",
@@ -480,12 +481,12 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n\t\"producto\": \"\",\n\t\"cantidad\": \"\"\n}"
+							"raw": "{\n\t\"producto\": \"5c93de5effa36900223d09d3\",\n\t\"cantidad\": \"5\"\n}"
 						},
 						"url": {
-							"raw": "{{urlL}}/lineapedidos?access_token={{usertokenPrueba}}",
+							"raw": "{{url}}/lineapedidos?access_token={{admintoken}}",
 							"host": [
-								"{{urlL}}"
+								"{{url}}"
 							],
 							"path": [
 								"lineapedidos"
@@ -493,7 +494,7 @@
 							"query": [
 								{
 									"key": "access_token",
-									"value": "{{usertokenPrueba}}"
+									"value": "{{admintoken}}"
 								}
 							]
 						}
