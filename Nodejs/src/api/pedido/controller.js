@@ -8,7 +8,7 @@ import { Distribuidor } from '../distribuidor'
 
 
 // Creación de pedido tocho
-
+/*
 export const create = async({ idProducto:string, cantidad: number, bodymen: { body } }, res, next) => {
   var lineapedidoC;
   var pedidoC;
@@ -56,10 +56,22 @@ export const create = async({ idProducto:string, cantidad: number, bodymen: { bo
   }
 
 
+*/
+export const create = ({ bodymen: { body } }, res, next) => {
+  Pedido.create(body)
+  .then((pedido) => pedido.view(true))
+  .then(success(res, 201))
+  .catch(next)
+}
+  
 
 export const index = ({ querymen: { query, select, cursor } }, res, next) => 
   Pedido.count(query)
     .then(count => Pedido.find(query, select, cursor)
+    .populate({path: 'lineaspedido', model: 'Lineapedido', populate: {path: 'producto', model: 'Producto' , select: 'nombre'}})
+    .populate('distribuidor', 'nombre')
+    .populate('empresa', 'name')
+
       .then((pedidos) => ({
         count,
         rows: pedidos.map((pedido) => pedido.view())
@@ -71,6 +83,9 @@ export const index = ({ querymen: { query, select, cursor } }, res, next) =>
 
 export const show = ({ params }, res, next) =>
   Pedido.findById(params.id)
+  .populate({path: 'lineaspedido', model: 'Lineapedido', populate: {path: 'producto', model: 'Producto' , select: 'nombre'}})
+  .populate('distribuidor', 'nombre')
+  .populate('empresa', 'name')
     .then(notFound(res))
     .then((pedido) => pedido ? pedido.view() : null)
     .then(success(res))

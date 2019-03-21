@@ -10,6 +10,7 @@ export const create = ({ bodymen: { body } }, res, next) =>
 export const index = ({ querymen: { query, select, cursor } }, res, next) =>
   Lineapedido.count(query)
     .then(count => Lineapedido.find(query, select, cursor)
+    .populate('producto', 'nombre')
       .then((lineapedidos) => ({
         count,
         rows: lineapedidos.map((lineapedido) => lineapedido.view())
@@ -20,6 +21,7 @@ export const index = ({ querymen: { query, select, cursor } }, res, next) =>
 
 export const show = ({ params }, res, next) =>
   Lineapedido.findById(params.id)
+   .populate('producto', 'nombre')
     .then(notFound(res))
     .then((lineapedido) => lineapedido ? lineapedido.view() : null)
     .then(success(res))

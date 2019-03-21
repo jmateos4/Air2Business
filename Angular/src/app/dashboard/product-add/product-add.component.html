@@ -27,7 +27,7 @@
     </div>
     <br>
   <mat-form-field>
-      <mat-select placeholder="Distribudor" [formControl]="form.controls['distributor']" [(value)]="distributorSelected" name = "distributor">
+      <mat-select placeholder="Distribuidor" [formControl]="form.controls['distributor']" [(value)]="distributorSelected" name = "distributor">
     <mat-option *ngFor="let distributor of allDistributors" [value]="distributor.id">
       {{distributor.nombre}}
     </mat-option>

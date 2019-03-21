@@ -3,7 +3,7 @@ import mongoose, { Schema } from 'mongoose'
 const pedidoSchema = new Schema({
   lineaspedido: [{
       type: Schema.ObjectId,
-      ref: 'Pedido'
+      ref: 'Lineapedido'
   }],
   estadopedido: {
     type: String

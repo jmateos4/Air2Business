@@ -60,7 +60,7 @@ public class DetailPedidoActivity extends AppCompatActivity {
         tvEstadopedido.setText("Estado: " + pedido.getEstadopedido());
         tvIdLineapedido.setText("ID Linea de Pedido: " + pedido.getLineaspedido().get(0).getId());
         tvNombreProducto.setText("Nombre del Producto: "+ pedido.getLineaspedido().get(0).getProducto().getNombre());
-        tvCantidad.setText("cANTIDAD del producto: " +pedido.getLineaspedido().get(0).getCantidad());
+        tvCantidad.setText("Cantidad del producto: " +pedido.getLineaspedido().get(0).getCantidad());
         tvDistribuidorNombre.setText("Dimensiones del producto: " + pedido.getDistribuidor().getNombre());
 
 

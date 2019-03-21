@@ -56,6 +56,8 @@ export const index = ({ querymen: { query, select, cursor } }, res, next) =>
 
 export const show = ({ params }, res, next) =>
   Producto.findById(params.id)
+    .populate('distribuidor', 'id nombre')
+    .populate('categoria', 'id nombre')
     .then(notFound(res))
     .then((producto) => producto ? producto.view() : null)
     .then(success(res))

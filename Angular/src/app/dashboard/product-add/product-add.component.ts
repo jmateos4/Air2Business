@@ -28,7 +28,7 @@ export class ProductAddComponent implements OnInit {
   public files: Set<File> = new Set();
 
   categorySelected;
-  distribuidorSelected;
+  distributorSelected;
   form: FormGroup;
   allProducts: Producto[];
   allDistributors: Distribuidor[];
