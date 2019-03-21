@@ -40,42 +40,50 @@
 
         <TextView
             android:id="@+id/textDetailDistribuidor"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
             android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textDetailNombre"
             app:layout_constraintTop_toBottomOf="@+id/textDetailNombre"
             tools:text="@string/distributordetailname" />
 
         <TextView
             android:id="@+id/textDetailCodRef"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
             android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textDetailDistribuidor"
             app:layout_constraintTop_toBottomOf="@+id/textDetailDistribuidor"
             tools:text="@string/detailcodref" />
 
         <TextView
             android:id="@+id/textDetailDescripcion"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
             android:text="TextView"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textDetailCodRef"
             app:layout_constraintTop_toBottomOf="@+id/textDetailCodRef"
             tools:text="@string/detaildescriptionproduct" />
 
         <TextView
             android:id="@+id/textDetailDimensiones"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
             android:layout_marginBottom="16dp"
             android:text="TextView"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/textDetailDescripcion"
             app:layout_constraintTop_toBottomOf="@+id/textDetailDescripcion"
             tools:text="@string/detailsizeproduct" />
